@@ -37,7 +37,13 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-   <header class="main-header">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -141,7 +147,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> 小区管理</a></li>
+           <li><a href="index2.html"><i class="fa fa-circle-o"></i> 小区管理</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> 楼宇管理</a></li>
 			 <li><a href="index2.html"><i class="fa fa-circle-o"></i> 房间档案管理</a></li>
 			  <li><a href="index2.html"><i class="fa fa-circle-o"></i> 房间状态图示</a></li>
@@ -157,8 +163,10 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-		    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+		    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> 客户档案</a></li>
+		    <li><a href="index2.html"><i class="fa fa-circle-o"></i> 迁入管理</a></li>
+			<li><a href="index2.html"><i class="fa fa-circle-o"></i> 楼宇</a></li>
+			<li><a href="index2.html"><i class="fa fa-circle-o"></i> 客户历史查询</a></li>
 		  </ul>
 		</li>
 		<li class="active treeview">
@@ -217,8 +225,9 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-		    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+		    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>投诉建议</a></li>
+		    <li><a href="index2.html"><i class="fa fa-circle-o"></i> 维修服务</a></li>
+			<li><a href="index2.html"><i class="fa fa-circle-o"></i> 装修服务</a></li>
 		  </ul>
 		</li>
 		<li class="active treeview">

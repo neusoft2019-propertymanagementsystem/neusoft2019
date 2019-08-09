@@ -1,5 +1,5 @@
 package com.neusoft.wuyemis.baseinfo.model;
-
+//客户表Model
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;

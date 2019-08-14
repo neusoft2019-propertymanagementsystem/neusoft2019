@@ -1,4 +1,7 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import java.util.Date;
+
 //员工信息表
 public class EmployeesModel {
 	private String EMPID = null;		//员工编号
@@ -6,7 +9,7 @@ public class EmployeesModel {
 	private String EMPName = null;		//员工姓名
 	private String SEX = null;		//性别
 	private int AGE = 0;		//年龄
-	private Datetime JOINDATE = null;		//入职日期
+	private Date JOINDATE = null;		//入职日期
 	private String JOB = null;		//职位
 	private String Mobile = null;		//手机
 	private String Tel = null;		//电话

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+import com.neusoft.wuyemis.admin.factory.ConnectionFactoryWithJNDI;
 import com.neusoft.wuyemis.admin.dao.IUserInfoDao;
 import com.neusoft.wuyemis.admin.model.UserInfoModel;
 /*
@@ -16,11 +17,19 @@ public class UserInfoDaoImpl implements IUserInfoDao {
 
 	@Override
 	public void create(UserInfoModel userInfoMosel) throws Exception {
-		Class.forName("com.mysql.jdbc.Driver");
-        Connection cn=DriverManager.getConnection("jdbc：mysql://localhost:3306/propertymanagement","root","root");
-		String sql="insert into userinfo values (?,?,?,?,?,?,?)";
+		//Class.forName("com.mysql.jdbc.Driver");
+        //Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/propertymanagement?serverTimezone=GMT%2B8","root","root");
+		
+		Connection cn=ConnectionFactoryWithJNDI.getConnection();
+		String sql="insert into userinfo values (?,?,?,?)";
 		PreparedStatement ps=cn.prepareStatement(sql);
-       
+		ps.setString(1, userInfoMosel.getUNAME());
+        ps.setString(2,userInfoMosel.getUPASSWORD() );
+		ps.setString(3, userInfoMosel.getUserStatus());
+		ps.setString(4, userInfoMosel.getUUSERID());
+		ps.executeLargeUpdate();
+		ps.close();
+		cn.close();
 	}
 
 	@Override

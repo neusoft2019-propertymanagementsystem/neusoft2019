@@ -6,6 +6,7 @@ public class SystemFunctionModel {
 	private String FUNNAME = null;		//功能名称
 	private String FUNURL = null;		//URL地址
 	private int LevelNo = 0;		//功能级别号
+	
 	public int getFUNNO() {
 		return FUNNO;
 	}

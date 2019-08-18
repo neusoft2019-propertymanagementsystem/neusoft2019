@@ -1,5 +1,9 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import lombok.Data;
+
 //房间表
+@Data
 public class RoomModel {
 	private int ROOMNO = 0;		//房间编号
 	private int HouseTypeNo = 0;		//房屋户型编号

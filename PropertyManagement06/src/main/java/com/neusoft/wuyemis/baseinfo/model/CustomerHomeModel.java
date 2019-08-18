@@ -1,5 +1,9 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import lombok.Data;
+
 //客户房间表
+@Data
 public class CustomerHomeModel {
 	private int CHNO = 0;		//客户房间序号
 	private int CustomerNo = 0;		//客户号

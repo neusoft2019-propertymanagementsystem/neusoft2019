@@ -2,7 +2,10 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.Date;
 
+import lombok.Data;
+
 //员工信息表
+@Data
 public class EmployeesModel {
 	private String EMPID = null;		//员工编号
 	private int DEPTNO = 0;		//部门序号

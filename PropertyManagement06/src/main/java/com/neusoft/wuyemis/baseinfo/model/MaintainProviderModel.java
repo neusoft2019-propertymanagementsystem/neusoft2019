@@ -1,5 +1,9 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import lombok.Data;
+
 //维修单位表
+@Data
 public class MaintainProviderModel {
 	private int ProviderNo = 0;		//单位序号
 	private String PName = null;		//单位名称

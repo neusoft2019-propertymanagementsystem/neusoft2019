@@ -26,7 +26,6 @@ public class ConnectionFactoryWithDBCP {
 		public static Connection getConnection() throws Exception{
 			return ds.getConnection();
 		}
-
 	}
 
 

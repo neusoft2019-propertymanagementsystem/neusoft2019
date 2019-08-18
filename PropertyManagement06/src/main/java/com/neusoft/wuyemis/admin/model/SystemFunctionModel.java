@@ -1,43 +1,41 @@
 package com.neusoft.wuyemis.admin.model;
 //系统功能表
 public class SystemFunctionModel {
-	private int FUNNO = 0;		//功能编号
-	private int MNO = 0;		//模块编号
-	private String FUNNAME = null;		//功能名称
-	private String FUNURL = null;		//URL地址
-	private int LevelNo = 0;		//功能级别号
-	
-	public int getFUNNO() {
-		return FUNNO;
+	private int funNo = 0;		//功能编号
+	private int mno = 0;		//模块编号
+	private String funName = null;		//功能名称
+	private String funUrl = null;		//URL地址
+	private int leveNo = 0;		//功能级别号
+	public int getFunNo() {
+		return funNo;
 	}
-	public void setFUNNO(int fUNNO) {
-		FUNNO = fUNNO;
+	public void setFunNo(int funNo) {
+		this.funNo = funNo;
 	}
-	public int getMNO() {
-		return MNO;
+	public int getMno() {
+		return mno;
 	}
-	public void setMNO(int mNO) {
-		MNO = mNO;
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
-	public String getFUNNAME() {
-		return FUNNAME;
+	public String getFunName() {
+		return funName;
 	}
-	public void setFUNNAME(String fUNNAME) {
-		FUNNAME = fUNNAME;
+	public void setFunName(String funName) {
+		this.funName = funName;
 	}
-	public String getFUNURL() {
-		return FUNURL;
+	public String getFunUrl() {
+		return funUrl;
 	}
-	public void setFUNURL(String fUNURL) {
-		FUNURL = fUNURL;
+	public void setFunUrl(String funUrl) {
+		this.funUrl = funUrl;
 	}
-	public int getLevelNo() {
-		return LevelNo;
+	public int getLeveNo() {
+		return leveNo;
 	}
-	public void setLevelNo(int levelNo) {
-		LevelNo = levelNo;
+	public void setLeveNo(int leveNo) {
+		this.leveNo = leveNo;
 	}
-
 	
 	
 }

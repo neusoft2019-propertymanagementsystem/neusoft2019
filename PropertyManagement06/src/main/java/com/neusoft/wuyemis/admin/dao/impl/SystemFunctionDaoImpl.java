@@ -20,10 +20,11 @@ public class SystemFunctionDaoImpl implements ISystemFunctionDao {
 		Connection cn=ConnectionFactoryWithJNDI.getConnection();
 		String sql="insert into userinfo values (?,?,?,?)";
 		PreparedStatement ps=cn.prepareStatement(sql);
-		ps.setInt(1, systemfuntionModel.getFUNNO());
-		ps.setString(2, systemfuntionModel.getFUNURL());
-		ps.setString(3, systemfuntionModel.getFUNNAME());
-		ps.setInt(4, systemfuntionModel.getLevelNo());
+		ps.setInt(1, systemfuntionModel.getFunNo());
+		ps.setString(2, systemfuntionModel.getFunName());
+		ps.setString(3, systemfuntionModel.getFunUrl());
+		ps.setInt(4, systemfuntionModel.getLeveNo());
+		ps.setInt(5, systemfuntionModel.getMno());
 		ps.executeLargeUpdate();
 		ps.close();
 		cn.close();

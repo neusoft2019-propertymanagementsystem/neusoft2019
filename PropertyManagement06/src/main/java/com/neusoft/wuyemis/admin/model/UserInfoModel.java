@@ -6,33 +6,34 @@ import java.io.Serializable;
 
 public class UserInfoModel implements Serializable {
 	
-		private String UUSERID = null;		//操作员登录账号
-		private String UPASSWORD = null;		//登录密码	
-		private String UNAME = null;		//姓名
-		private String UserStatus = null;		//登录状态(Y/N)
-		public String getUUSERID() {
-			return UUSERID;
+		private String userinfoId = null;		//操作员登录账号
+		private String userinfoPassword = null;		//登录密码	
+		private String userinfoName = null;		//姓名
+		private String userinfoStatus = null;		//登录状态(Y/N)
+		public String getUserinfoId() {
+			return userinfoId;
 		}
-		public void setUUSERID(String uUSERID) {
-			UUSERID = uUSERID;
+		public void setUserinfoId(String userinfoId) {
+			this.userinfoId = userinfoId;
 		}
-		public String getUPASSWORD() {
-			return UPASSWORD;
+		public String getUserinfoPassword() {
+			return userinfoPassword;
 		}
-		public void setUPASSWORD(String uPASSWORD) {
-			UPASSWORD = uPASSWORD;
+		public void setUserinfoPassword(String userinfoPassword) {
+			this.userinfoPassword = userinfoPassword;
 		}
-		public String getUNAME() {
-			return UNAME;
+		public String getUserinfoName() {
+			return userinfoName;
 		}
-		public void setUNAME(String uNAME) {
-			UNAME = uNAME;
+		public void setUserinfoName(String userinfoName) {
+			this.userinfoName = userinfoName;
 		}
-		public String getUserStatus() {
-			return UserStatus;
+		public String getUserinfoStatus() {
+			return userinfoStatus;
 		}
-		public void setUserStatus(String userStatus) {
-			UserStatus = userStatus;
+		public void setUserinfoStatus(String userinfoStatus) {
+			this.userinfoStatus = userinfoStatus;
 		}
-
+		
+		
 }

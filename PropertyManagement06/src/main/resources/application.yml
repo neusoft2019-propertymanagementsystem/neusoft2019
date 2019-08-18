@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://locahost:3306/neusoftoa?serverTimezone=GMT%2B8
+    url: jdbc:mysql://locahost:3306/propermanagement?serverTimezone=GMT%2B8
     username: root
     password: root
   jackson:

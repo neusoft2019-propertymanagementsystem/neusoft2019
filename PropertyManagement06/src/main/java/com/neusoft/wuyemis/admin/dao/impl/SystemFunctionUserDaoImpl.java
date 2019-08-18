@@ -21,7 +21,7 @@ public class SystemFunctionUserDaoImpl implements ISystemFunctionUserDao {
 		String sql="insert into userinfo values (?,?,?,)";
 		PreparedStatement ps=cn.prepareStatement(sql);
 		ps.setInt(1, systemfuntionMdoel.getFunNo());
-		ps.setString(2, systemfuntionMdoel.getUserID());
+		ps.setString(2, systemfuntionMdoel.getUserId());
 
 	}
 

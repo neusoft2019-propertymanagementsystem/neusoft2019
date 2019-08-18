@@ -23,10 +23,10 @@ public class UserInfoDaoImpl implements IUserInfoDao {
 		Connection cn=ConnectionFactoryWithJNDI.getConnection();
 		String sql="insert into userinfo values (?,?,?,?)";
 		PreparedStatement ps=cn.prepareStatement(sql);
-		ps.setString(1, userInfoMosel.getUNAME());
-        ps.setString(2,userInfoMosel.getUPASSWORD() );
-		ps.setString(3, userInfoMosel.getUserStatus());
-		ps.setString(4, userInfoMosel.getUUSERID());
+		ps.setString(1, userInfoMosel.getUserinfoId());
+        ps.setString(2,userInfoMosel.getUserinfoPassword() );
+		ps.setString(3, userInfoMosel.getUserinfoName());
+		ps.setString(4, userInfoMosel.getUserinfoStatus());
 		ps.executeLargeUpdate();
 		ps.close();
 		cn.close();

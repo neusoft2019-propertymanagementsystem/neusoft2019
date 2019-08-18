@@ -20,8 +20,8 @@ public class SystemModuleDaoImpl implements ISystemModuleDao {
 		Connection cn=ConnectionFactoryWithJNDI.getConnection();
 		String sql="insert into userinfo values (?,?)";
 		PreparedStatement ps=cn.prepareStatement(sql);
-		ps.setInt(1, systemModuleModel.getMNO());
-		ps.setString(2, systemModuleModel.getMNAME());
+		ps.setInt(1, systemModuleModel.getMno());
+		ps.setString(2, systemModuleModel.getMname());
 		ps.executeLargeUpdate();
 		ps.close();
 		cn.close();

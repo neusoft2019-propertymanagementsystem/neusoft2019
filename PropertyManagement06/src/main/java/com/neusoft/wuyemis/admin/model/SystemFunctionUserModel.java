@@ -1,19 +1,22 @@
 package com.neusoft.wuyemis.admin.model;
 //系统功能权限表
 public class SystemFunctionUserModel {
-	private int FunNo = 0;		//功能号
-	private String UserID = null;		//操作员账号
+	private int funNo = 0;		//功能号
+	private String userId = null;		//操作员账号
 	public int getFunNo() {
-		return FunNo;
+		return funNo;
 	}
 	public void setFunNo(int funNo) {
-		FunNo = funNo;
+		this.funNo = funNo;
 	}
-	public String getUserID() {
-		return UserID;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUserID(String userID) {
-		UserID = userID;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+	
+	
+	
 
 }

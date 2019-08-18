@@ -1,19 +1,24 @@
 package com.neusoft.wuyemis.admin.model;
 //系统模块表
 public class SystemModuleModel {
-	private int MNO = 0;		//模块编号
-	private String MNAME = null;		//模块名称
-	public int getMNO() {
-		return MNO;
+	private int mno = 0;		//模块编号
+	private String mname = null;		//模块名称
+	public int getMno() {
+		return mno;
 	}
-	public void setMNO(int mNO) {
-		MNO = mNO;
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
-	public String getMNAME() {
-		return MNAME;
+	public String getMname() {
+		return mname;
 	}
-	public void setMNAME(String mNAME) {
-		MNAME = mNAME;
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
+	
+	
+	
+	
+	
 
 }

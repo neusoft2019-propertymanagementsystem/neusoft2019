@@ -12,8 +12,8 @@ public class ParkFeeModel {
 	private BigDecimal SPay = null;		//应缴费金额
 	private BigDecimal APay = null;		//实缴费金额
 	private BigDecimal Derate = null;		//减免金额
-	private DateTime StartDate = null;		//开始日期
-	private DateTime EndDate = null;		//截止日期
+	//private DateTime StartDate = null;		//开始日期
+	//private DateTime EndDate = null;		//截止日期
 	private String FeeStatus = null;		//缴费状态(Y/N)
 
 }

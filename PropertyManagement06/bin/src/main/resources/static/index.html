@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  
+  <link rel="stylesheet" href="dist/jqueryui/jquery-ui.min.css">
+  
+ <!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="bower_components/raphael/raphael.min.js"></script>
+<script src="bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+
+<script type="text/javascript" src="dist/jqueryui/jquery-ui.min.js"></script>
+
+ </head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>物业管理系统</b></span>
+      </a>
+      
+      <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only"></span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+    
+  </header>
+  
+  <!-- 左部导航栏 -->
+  
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+     
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"> 主菜单</li>
+        <!--房产管理-->
+        <li class="treeview menu-open">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>房产管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="employee/main.html"><i class="fa fa-circle-o"></i>员工管理</a></li>
+           <li><a href="#"><i class="fa fa-circle-o"></i> 小区管理</a></li>
+           <li><a href="#"><i class="fa fa-circle-o"></i> 楼宇管理</a></li>
+		   <li><a href="#"><i class="fa fa-circle-o"></i> 房间档案管理</a></li>
+		   <li><a href="#"><i class="fa fa-circle-o"></i> 房间状态图示</a></li>
+			
+          </ul>
+        </li>
+		 <!--客户管理-->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>客户管理</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 客户档案</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 迁入管理</a></li>
+			<li><a href="#"><i class="fa fa-circle-o"></i> 楼宇</a></li>
+			<li><a href="#"><i class="fa fa-circle-o"></i> 客户历史查询</a></li>
+		  </ul>
+		</li>
+		 <!--抄表管理-->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>抄表管理</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 表计类别设置</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 表计档案管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 抄表录入管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 抄表历史查询</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 表计换表统计</a></li>
+		  </ul>
+		</li>
+	    <!-- 收费管理 -->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>收费管理</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i>  基本收费项目设置 </a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 房间收费项目设置</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i>应收记录管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 前台收费营业</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 开单录入管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 已收记录归档</a></li>		 
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 退费管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 押金管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 催费通知管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 预收款管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 坏账管理</a></li>	
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 收费记录金额减免</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 阶梯价格管理</a></li>	    
+		  </ul>
+		</li>
+		<!-- 事务提醒 -->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>事务提醒</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 费用到期提醒</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i>欠费提醒</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i>入住到期提醒</a></li>
+		  </ul>
+		</li>
+		<!-- 租赁管理 -->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>租赁管理</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 合同档案管理</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 租赁房间查询</a></li>
+		    
+		  </ul>
+		</li>
+		<!-- 财务统计 -->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>财务统计</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 房间应收记录统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 客户缴费历史查询</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 收费流水统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 押金统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 预收款统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 客户结余金额统计</a></li>		 
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 退费历史统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 财务汇总统计</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 收费项目收费状况</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 房间收费状况</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 管理处收费状况</a></li>	
+		  </ul>
+		</li>
+		<!-- 客户服务 -->
+		<li class="treeview menu-open">
+		  <a href="#">
+		    <i class="fa fa-dashboard"></i> <span>客户服务</span>
+		    <span class="pull-right-container">
+		      <i class="fa fa-angle-left pull-right"></i>
+		    </span>
+		  </a>
+		  <ul class="treeview-menu">
+		    <li class="active"><a href="#"><i class="fa fa-circle-o"></i>投诉建议</a></li>
+		    <li><a href="#"><i class="fa fa-circle-o"></i> 维修服务</a></li>
+			<li><a href="#"><i class="fa fa-circle-o"></i> 装修服务</a></li>
+		  </ul>
+		</li>
+      
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+  
+  
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        物业管理系统
+      </h1>
+      <!--  -->
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">#</li>
+      </ol>
+    </section>
+    
+    <!-- 主内容显示区域 -->
+    
+    <section class="content" id="maincontent">
+    
+    </section>
+  </div>
+  
+  
+  <!-- 底部版权说明 -->
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+
+</body>
+</html>

@@ -15,4 +15,5 @@ public interface IEmployeesDao {
 	public void delete(EmployeesModel employeesModel) throws Exception;
 	public List<EmployeesModel> selectListByAll() throws Exception;
 
+	
 }

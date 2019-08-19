@@ -2,7 +2,10 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.Date;
 
+import lombok.Data;
+
 //车位客户表
+@Data
 public class ParkCustomerModel {
 	private int PCNO = 0;		//车辆客户关联序号
 	private int ParkNo = 0;		//车位号

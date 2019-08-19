@@ -1,5 +1,9 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import lombok.Data;
+
 //服务表
+@Data
 public class ServiceModel {
 	private int SPNO = 0;		//服务序号
 	private int TYPENO = 0;		//服务类型编号

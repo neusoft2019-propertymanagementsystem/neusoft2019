@@ -1,5 +1,9 @@
 package com.neusoft.wuyemis.baseinfo.model;
+
+import lombok.Data;
+
 //楼宇表
+@Data
 public class BuildingModel {
 	private int BuildingNo = 0;		//序号
 	private int AreaNo = 0;		//小区序号

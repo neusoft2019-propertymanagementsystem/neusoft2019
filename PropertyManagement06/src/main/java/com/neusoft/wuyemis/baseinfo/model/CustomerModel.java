@@ -4,7 +4,10 @@ import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import lombok.Data;
 @Alias("User")
+@Data
 public class CustomerModel {
 	private int CustomerNo = 0;  //客户序号
 	private int TYPENO = 0;		//客户类型序号

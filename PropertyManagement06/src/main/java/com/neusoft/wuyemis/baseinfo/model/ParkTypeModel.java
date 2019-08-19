@@ -2,7 +2,10 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.math.BigDecimal;
 
+import lombok.Data;
+
 //车位类型表
+@Data
 public class ParkTypeModel {
 	private int TYPENO = 0;		//类型编号
 	private String TYPENAME = null;		//类型名称

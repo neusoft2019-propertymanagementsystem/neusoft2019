@@ -1,0 +1,18 @@
+package com.neusoft.wuyemis.baseinfo.dao;
+/*
+ * 模块：baseinfo
+ * Dao接口
+ * @Author: 刘勇超
+ */
+
+import java.util.List;
+
+import com.neusoft.wuyemis.baseinfo.model.CustomerModel;
+
+public interface ICustomerDao {
+	public void create(CustomerModel customerModel) throws Exception;
+	public void update(CustomerModel customerModel) throws Exception;
+	public void delete(CustomerModel customerModel) throws Exception;
+	public List<CustomerModel> selectListByAll() throws Exception;
+
+}

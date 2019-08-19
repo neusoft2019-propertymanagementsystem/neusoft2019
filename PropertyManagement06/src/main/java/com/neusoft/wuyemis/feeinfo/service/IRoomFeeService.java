@@ -3,7 +3,6 @@ package com.neusoft.wuyemis.feeinfo.service;
 import java.util.List;
 
 import com.neusoft.wuyemis.feeinfo.model.RoomFeeModel;
-import com.neusoft.wuyemis.security.model.UserModel;
 
 public interface IRoomFeeService {
 	
@@ -13,6 +12,6 @@ public interface IRoomFeeService {
 
 	public void delete(RoomFeeModel roomfeeModel) throws Exception; 
 
-	public List<UserModel> getListByAll() throws Exception;
+	public List<RoomFeeModel> getListByAll() throws Exception;
 
 }

@@ -17,6 +17,8 @@ public class RoomFeeModel {
 	private BigDecimal Derate = null;		//减免金额
 	private Date StartDate = null;		//开始日期
 	private Date EndDate = null;		//截止日期
+	//private DateTime StartDate = null;		//开始日期
+	//private DateTime EndDate = null;		//截止日期
 	private String FeeStatus = null;		//缴费状态(Y/N)
 	public int getClass(Class<IRoomFeeDao> class1) {
 		// TODO Auto-generated method stub

@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.neusoft.wuyemis.feeinfo.dao.IRoomFeeDao;
 import com.neusoft.wuyemis.feeinfo.model.RoomFeeModel;
 import com.neusoft.wuyemis.feeinfo.service.IRoomFeeService;
-import com.neusoft.wuyemis.security.model.UserModel;
 
 @Transactional(rollbackFor=Exception.class)
 public class RoomFeeServiceImpl implements IRoomFeeService {
@@ -34,7 +33,7 @@ public class RoomFeeServiceImpl implements IRoomFeeService {
 	}
 
 	@Override
-	public List<UserModel> getListByAll() throws Exception {
+	public List<RoomFeeModel> getListByAll() throws Exception {
 
 		return null;
 	}

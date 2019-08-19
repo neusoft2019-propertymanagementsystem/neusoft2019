@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IAreaDao">
+
+<insert id ="create" keyProperty="no" keyColumn="AREANO" useGeneratedKeys="true" flushCache="true">
+<selectKey keyProperty="no" resultType="int" order="BEFORE">
+	select SQ_Area.nextval from dual
+</selectKey>
+	insert into Area(AREANO,AREANAME,AAddress,Developer,TotalBuidingArea,TotalUseArea,TotalPackArea,TotalHome,TotalHouse,TotalPack)
+	values (#{no},#{AREANAME},#{AAddress},#{Developer},#{TotalBuidingArea},#{TotalUseArea},#{TTotalPackArea},#{TotalHome},#{TotalHouse},#{TotalPack})
+</insert>
+
+<update id="update" flushCache="true">
+	update Area set AREANAME=#{AREANAME},AAddress=#{AAddress},Developer=#{Developer},TotalBuidingArea=#{TotalBuidingArea},TotalUseArea=#{TotalUseArea},
+					TotalPackArea=#{TotalPackArea},TotalHome=#{TotalHome},TotalHouse=#{TotalHouse},TotalPack=#{TotalPack} where AREANO=#{no}
+</update>
+
+<delete>
+delete from Area where AREANO=#{no}
+</delete>
+</mapper>

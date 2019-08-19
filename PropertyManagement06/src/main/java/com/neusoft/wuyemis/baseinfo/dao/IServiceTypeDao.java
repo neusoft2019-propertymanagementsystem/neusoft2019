@@ -2,10 +2,12 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
+import com.neusoft.wuyemis.baseinfo.model.ServiceTypeModel;
+
 public interface IServiceTypeDao {
-	public void create() throws Exception;
-	public void update() throws Exception;
-	public void delete() throws Exception;
-	public List< > selectListByAll throws EXception;
+	public void create(ServiceTypeModel serviceTypeModel) throws Exception;
+	public void update(ServiceTypeModel serviceTypeModel) throws Exception;
+	public void delete(ServiceTypeModel serviceTypeModel) throws Exception;
+	public List<ServiceTypeModel> selectListByAll() throws Exception;
 
 }

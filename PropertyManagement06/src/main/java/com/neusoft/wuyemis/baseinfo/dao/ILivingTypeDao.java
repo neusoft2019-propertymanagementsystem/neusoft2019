@@ -2,10 +2,12 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
+import com.neusoft.wuyemis.baseinfo.model.LivingTypeModel;
+
 public interface ILivingTypeDao {
-	public void create() throws Exception;
-	public void update() throws Exception;
-	public void delete() throws Exception;
-	public List< > selectListByAll throws EXception;
+	public void create(LivingTypeModel livingTypeModel) throws Exception;
+	public void update(LivingTypeModel livingTypeModel) throws Exception;
+	public void delete(LivingTypeModel livingTypeModel) throws Exception;
+	public List<LivingTypeModel> selectListByAll() throws Exception;
 
 }

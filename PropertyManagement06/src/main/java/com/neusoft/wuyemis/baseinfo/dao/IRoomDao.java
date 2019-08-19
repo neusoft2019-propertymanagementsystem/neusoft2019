@@ -2,10 +2,12 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
+import com.neusoft.wuyemis.baseinfo.model.RoomModel;
+
 public interface IRoomDao {
-	public void create() throws Exception;
-	public void update() throws Exception;
-	public void delete() throws Exception;
-	public List< > selectListByAll throws EXception;
+	public void create(RoomModel roomModel) throws Exception;
+	public void update(RoomModel roomModel) throws Exception;
+	public void delete(RoomModel roomModel) throws Exception;
+	public List<RoomModel> selectListByAll() throws Exception;
 
 }

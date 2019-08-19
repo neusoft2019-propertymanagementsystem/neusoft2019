@@ -14,6 +14,6 @@ public interface IMaintainRecordDao {
 	
 	public void delete(MaintainRecordModel maintainrecordModel) throws Exception;
 	
-	public List<MaintainRecordModel> selectListByAllwithRoles() throws Exception; 
+	public List<MaintainRecordModel> selectListByAll() throws Exception; 
 
 }

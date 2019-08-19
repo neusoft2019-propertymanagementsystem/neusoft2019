@@ -13,6 +13,6 @@ public interface IPayTypeDao {
 	
 	public void delete(PayTypeModel paytypeModel) throws Exception;
 	
-	public List<PayTypeModel> selectListByAllwithRoles() throws Exception; 
+	public List<PayTypeModel> selectListByAll() throws Exception; 
 
 }

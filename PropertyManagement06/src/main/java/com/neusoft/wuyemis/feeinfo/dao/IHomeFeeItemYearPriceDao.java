@@ -16,7 +16,7 @@ public interface IHomeFeeItemYearPriceDao {
 	
 	public void delete(HomeFeeItemYearPriceModel homefeeitemyearpriceModel) throws Exception;
 
-	public List<HomeFeeItemYearPriceModel> selectListByAllWithRoles() throws Exception;
+	public List<HomeFeeItemYearPriceModel> selectListByAll() throws Exception;
 	
 	
 }

@@ -15,6 +15,6 @@ public interface IParkFeePayRecordDao {
 	
 	public void delete(ParkFeePayRecordModel parkfeepayrecordModel) throws Exception;
 	
-	public List<ParkFeePayRecordModel> selectListByAllwithRoles() throws Exception; 
+	public List<ParkFeePayRecordModel> selectListByAll() throws Exception; 
 
 }

@@ -16,6 +16,6 @@ public interface IRoomCustomerFeeDao {
 	
 	public void delete(RoomCustomerFeeModel roomcustomerfeeModel) throws Exception;
 	
-	public List<RoomCustomerFeeModel> seleceListByAllWithRoles() throws Exception;
+	public List<RoomCustomerFeeModel> seleceListByAll() throws Exception;
 	
 }

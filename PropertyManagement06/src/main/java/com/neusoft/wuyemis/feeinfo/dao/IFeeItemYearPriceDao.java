@@ -14,6 +14,6 @@ public interface IFeeItemYearPriceDao {
 	
 	public void delete(FeeItemYearPriceModel feeitemyearpriceModel) throws Exception;
 	
-	public List<FeeItemYearPriceModel> selectListByAllwithRoles() throws Exception; 
-
+	public List<FeeItemYearPriceModel> selectListByAll() throws Exception; 
+	
 }

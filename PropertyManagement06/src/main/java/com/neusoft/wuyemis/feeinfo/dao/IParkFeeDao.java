@@ -13,6 +13,6 @@ public interface IParkFeeDao {
 	
 	public void delete(ParkFeeModel parkfeeModel) throws Exception;
 	
-	public List<ParkFeeModel> selectListByAllwithRoles() throws Exception; 
+	public List<ParkFeeModel> selectListByAll() throws Exception; 
 
 }

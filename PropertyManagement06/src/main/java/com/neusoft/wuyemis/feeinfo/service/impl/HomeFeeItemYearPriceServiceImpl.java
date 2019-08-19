@@ -3,10 +3,9 @@ package com.neusoft.wuyemis.feeinfo.service.impl;
 import java.util.List;
 
 import com.neusoft.wuyemis.feeinfo.model.HomeFeeItemYearPriceModel;
-import com.neusoft.wuyemis.feeinfo.service.IRoomHomeFeeItemYearPriceService;
+import com.neusoft.wuyemis.feeinfo.service.IHomeFeeItemYearPriceService;
 
-
-public class RoomHomeFeeItemYearPriceServiceImpl implements IRoomHomeFeeItemYearPriceService {
+public class HomeFeeItemYearPriceServiceImpl implements IHomeFeeItemYearPriceService {
 
 	@Override
 	public void create(HomeFeeItemYearPriceModel homefeeitemyearpriceModel) throws Exception {

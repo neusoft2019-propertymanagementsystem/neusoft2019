@@ -1,16 +1,14 @@
 package com.neusoft.wuyemis.baseinfo.model;
 //客户表Model
 import java.util.Date;
+import java.util.List;
 
-import org.apache.ibatis.type.Alias;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
-@Alias("User")
 @Data
 public class CustomerModel {
-	private int CustomerNo = 0;  //客户序号
-	private int TYPENO = 0;		//客户类型序号
+	private int CustomerNO = 0;  //客户序号
 	private String CCODE = null;		//客户编码
 	private String CNAME = null;		//客户名称
 	private String Contact = null;		//联系人姓名
@@ -25,5 +23,13 @@ public class CustomerModel {
 	private Date FeeEndDate = null;		//收费截止日期
 	private String CStatus = null;		//客户状态
 	
+	//关联的客户类型表对象
+	private CustomerTypeModel customerType = null;
+	
+	//关联的客户-房间表类型对象列表
+	private List<CustomerHomeModel> customerHomes = null;
+	
+	//关联的车位-客户表对象列表
+	private List<ParkCustomerModel> parkCustomers =null;
 
 }

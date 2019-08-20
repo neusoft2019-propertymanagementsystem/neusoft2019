@@ -5,7 +5,7 @@ import lombok.Data;
 //维修单位表
 @Data
 public class MaintainProviderModel {
-	private int ProviderNo = 0;		//单位序号
+	private int ProviderNO = 0;		//单位序号
 	private String PName = null;		//单位名称
 	private String PContact= null;		//联系人
 	private String PAddress = null;		//单位地址

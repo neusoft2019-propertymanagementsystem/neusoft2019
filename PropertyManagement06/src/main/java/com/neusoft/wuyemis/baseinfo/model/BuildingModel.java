@@ -1,17 +1,28 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.util.List;
+
 import lombok.Data;
 
 //楼宇表
 @Data
 public class BuildingModel {
-	private int BuildingNo = 0;		//序号
-	private int AreaNo = 0;		//小区序号
+	private int BuildingNO = 0;		//序号
 	private String BCODE = null;		//楼号
 	private String BAddress = null;		//楼宇地址
-	private int BuildingTypeNo = 0;		//建筑类型编号
 	private String Direction = null;		//楼宇朝向
 	private int TotalHome= 0;		//居民数
 	private int TotalHouse= 0;		//公建数
+	
+	//关联的小区对象
+	private AreaModel area = null;
+	//关联的建筑类型对象
+	private BuildingTypeModel buildingType = null;
+	
+	//关联的房间表对象列表
+	private List<RoomModel> rooms=null;
+	
+	//关联的车位表类型列表
+	private List<ParkModel> parks =null;
 
 }

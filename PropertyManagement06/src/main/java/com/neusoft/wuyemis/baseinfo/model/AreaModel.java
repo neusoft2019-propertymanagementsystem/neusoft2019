@@ -1,6 +1,7 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import lombok.Data;
 //小区表
@@ -16,4 +17,7 @@ public class AreaModel {
 	private int TotalHome = 0;		//总居民数		
 	private int TotalHouse = 0;		//总公建数
 	private int TotalPack = 0;		//车位数
+	
+	//关联楼宇对象列表
+	private List<BuildingModel> Buildings = null; 
 }

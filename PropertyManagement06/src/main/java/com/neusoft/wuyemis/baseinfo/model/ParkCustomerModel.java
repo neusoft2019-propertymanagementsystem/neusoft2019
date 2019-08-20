@@ -13,6 +13,11 @@ public class ParkCustomerModel {
 	private String CarCode = null;		//车牌号
 	private Date StartDate = null;		//开始日期
 	private Date EndDate = null;		//结束日期
-	private String PCStatus= null;		//关联状态(Y:正在关联，N:关联解除)	
+	private String PCStatus= null;		//关联状态(Y:正在关联，N:关联解除)
+	
+	//关联的车位表对象
+	private ParkModel park = null;
+	//关联的客户表对象
+	private CustomerModel customer = null;
 	
 }

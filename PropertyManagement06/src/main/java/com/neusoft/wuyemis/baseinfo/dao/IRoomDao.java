@@ -9,5 +9,8 @@ public interface IRoomDao {
 	public void update(RoomModel roomModel) throws Exception;
 	public void delete(RoomModel roomModel) throws Exception;
 	public List<RoomModel> selectListByAll() throws Exception;
+	
+	//关联方法
+	//
 
 }

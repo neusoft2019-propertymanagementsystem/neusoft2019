@@ -14,5 +14,8 @@ public interface ICustomerDao {
 	public void update(CustomerModel customerModel) throws Exception;
 	public void delete(CustomerModel customerModel) throws Exception;
 	public List<CustomerModel> selectListByAll() throws Exception;
+	
+	//关联方法
+	//
 
 }

@@ -7,8 +7,10 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
-import com.neusoft.wuyemis.baseinfo.model.DepartmentsModel;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.neusoft.wuyemis.baseinfo.model.DepartmentsModel;
+@Mapper
 public interface IDepartmentsDao {
 	public void create(DepartmentsModel departmentsModel) throws Exception;
 	public void update(DepartmentsModel departmentsModel) throws Exception;

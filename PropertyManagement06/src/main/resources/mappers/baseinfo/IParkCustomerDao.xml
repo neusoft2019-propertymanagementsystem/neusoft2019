@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IParkCustomerDao">
+	<cache/>
+	<resultMap id="ParkCustomerresultMap" type="ParkCustomer">
+		<id property="PCNO" column="PCNO"/>
+		<result property="CarCode" column="CarCode"/>
+		<result property="StartDate" column="StartDate"/>
+		<result property="EndDate" column="EndDate"/>
+		<result property="PCStatus" column="PCStatus"/>
+	</resultMap>
+ 
+</mapper>

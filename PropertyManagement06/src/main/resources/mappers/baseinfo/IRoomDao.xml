@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IRoomDao">
+	<cache/>
+	<resultMap id="RoomresultMap" type="Room">
+		<id property="ROOMNO" column="ROOMNO"/>
+		<result property="DepartmentCode" column="DepartmentCode"/>
+		<result property="Floor" column="Floor"/>
+		<result property="RoomCode" column="RoomCode"/>
+		<result property="BuildingArea" column="BuildingArea"/>
+		<result property="FeeArea" column="FeeArea"/>
+		<result property="RoomStatus" column="RoomStatus"/>
+		<result property="RoomType" column="RoomType"/>
+	</resultMap>
+ 
+</mapper>

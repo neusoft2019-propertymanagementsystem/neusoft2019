@@ -2,8 +2,10 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
-import com.neusoft.wuyemis.baseinfo.model.ParkCustomerModel;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.neusoft.wuyemis.baseinfo.model.ParkCustomerModel;
+@Mapper
 public interface IParkCustomerDao {
 	public void create(ParkCustomerModel parkCustomerModel) throws Exception;
 	public void update(ParkCustomerModel parkCustomerModel) throws Exception;

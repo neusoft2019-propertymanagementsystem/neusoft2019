@@ -2,8 +2,10 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
-import com.neusoft.wuyemis.baseinfo.model.MaintainTypeModel;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.neusoft.wuyemis.baseinfo.model.MaintainTypeModel;
+@Mapper
 public interface IMaintainTypeDao {
 	public void create(MaintainTypeModel maintainTypeModel) throws Exception;
 	public void update(MaintainTypeModel maintainTypeModel) throws Exception;

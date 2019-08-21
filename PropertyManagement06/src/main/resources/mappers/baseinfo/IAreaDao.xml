@@ -3,8 +3,22 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IAreaDao">
-
+	<cache/>
+	<resultMap id="ArearesultMap" type="Area">
+		<id property="AREANO" column="AREANO"/>
+		<result property="AREANAME" column="AREANAME"/>
+		<result property="AAddress" column="AAddress"/>
+		<result property="Developer" column="Developer"/>
+		<result property="TotalBuidingArea" column="TotalBuidingArea"/>
+		<result property="TotalUseArea" column="TotalUseArea"/>
+		<result property="TTotalPackArea" column="TTotalPackArea"/>
+		<result property="TotalHome" column="TotalHome"/>
+		<result property="TotalHouse" column="TotalHouse"/>
+		<result property="TotalPack" column="TotalPack"/>
+	</resultMap>
+	
 <insert id ="create" keyProperty="no" keyColumn="AREANO" useGeneratedKeys="true" flushCache="true">
+
 <selectKey keyProperty="no" resultType="int" order="BEFORE">
 	select SQ_Area.nextval from dual
 </selectKey>
@@ -20,6 +34,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete>
 delete from Area where AREANO=#{no}
 </delete>
-
-
 </mapper>

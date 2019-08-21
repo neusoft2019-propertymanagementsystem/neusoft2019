@@ -18,7 +18,7 @@
   </resultMap>
   
   
-  <insert id="insert"  keyProperty="no"   keyColumn="RNO" useGeneratedKeys="true" flushCache="true" >
+  <insert id="insert"  keyProperty="no"   keyColumn="itemno" useGeneratedKeys="true" flushCache="true" >
    insert into feeitem (ItemName) values (#{name})
   
   </insert>

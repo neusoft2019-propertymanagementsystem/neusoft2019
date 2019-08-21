@@ -29,5 +29,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delete" flushCache="true">
 	delete from CustomerHome where CHNO=#{no}
 	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="CustomerHomeresultMap">
+	select * from CustomerHome
+	</select>
  
 </mapper>

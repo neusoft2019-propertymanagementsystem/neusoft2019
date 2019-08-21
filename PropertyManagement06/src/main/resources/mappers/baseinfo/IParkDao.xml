@@ -14,5 +14,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="RentUnit" column="RentUnit"/>
 		<result property="FeeStatus" column="FeeStatus"/>
 	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="ParkNO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_Park.nextval from dual
+			</selectKey>
+		insert into Park(ParkNO,ParkCode,Location,Area,ParkStatus,Rentprice,RentUnit,FeeStatus)
+		values (#{no},#{ParkCode},#{Location},#{Area},#{ParkStatus},#{Rentprice},#{RentUnit},#{FeeStatus})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update Park set ParkCode=#{ParkCode},Location=#{Location},Area=#{Area},ParkStatus=#{ParkStatus},Rentprice=#{Rentprice},RentUnit=#{RentUnit}, FeeStatus=#{FeeStatus}
+		where ParkNO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from Park where ParkNO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="ParkresultMap">
+	select * from Park
+	</select>
  
 </mapper>

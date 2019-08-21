@@ -16,5 +16,6 @@ public interface ICustomerHomeDao {
 	public void update(CustomerHomeModel customerHomeModel) throws Exception;
 	public void delete(CustomerHomeModel customerHomeModel) throws Exception;
 	public List<CustomerHomeModel> selectListByAll() throws Exception;
+	
 
 }

@@ -36,5 +36,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delete" flushCache="true">
 	delete from Customer where CustomerNO=#{no}
 	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="CustomerresultMap">
+	select * from Customer
+	</select>
  
 </mapper>

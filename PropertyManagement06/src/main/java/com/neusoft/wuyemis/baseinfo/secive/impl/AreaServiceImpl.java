@@ -18,4 +18,10 @@ public class AreaServiceImpl implements IAreaService {
 		return areaDao.selectListByAll();
 	}
 
+	@Override
+	public void addArea() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

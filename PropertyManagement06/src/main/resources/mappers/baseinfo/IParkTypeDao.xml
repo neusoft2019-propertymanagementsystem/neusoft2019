@@ -10,5 +10,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="UnitPrice" column="UnitPrice"/>
 		<result property="Unit" column="Unit"/>
 	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_ParkType.nextval from dual
+			</selectKey>
+		insert into ParkType(TYPENO,TYPENAME,UnitPrice,Unit)
+		values (#{no},#{TYPENAME},#{UnitPrice},#{Unit})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update ParkType set TYPENAME=#{TYPENAME},UnitPrice=#{UnitPrice},Unit=#{Unit}
+		where TYPENO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from ParkType where TYPENO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="ParkTyperesultMap">
+	select * from ParkType
+	</select>
  
 </mapper>

@@ -11,13 +11,15 @@ import com.neusoft.wuyemis.baseinfo.secive.IAreaService;
 
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 public class AreaAPIController {
 	@Autowired
-	private IAreaService us = null;
+	private IAreaService AreaService = null;
+	
 	@RequestMapping(value="/list")	
 	public List<AreaModel> getUserList() throws Exception{
-		return us.getListByAll();
+		System.out.println(AreaService);
+		return AreaService.selectListByAll();
 	}
 
 }

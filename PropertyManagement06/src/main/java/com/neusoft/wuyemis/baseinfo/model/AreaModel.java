@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Alias("Area")
 public class AreaModel {
-	private int AREANO = 0;		//小区编号
+	private int AREANO=0;	//小区编号
 	private String AREANAME = null;		//小区名称
 	private String AAddress = null;		//小区地址
 	private String Developer = null;		//开发商

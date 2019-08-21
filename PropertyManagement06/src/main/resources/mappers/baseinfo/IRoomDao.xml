@@ -14,5 +14,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="RoomStatus" column="RoomStatus"/>
 		<result property="RoomType" column="RoomType"/>
 	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="ROOMNO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_Room.nextval from dual
+			</selectKey>
+		insert into Room(ROOMNO,DepartmentCode,Floor,RoomCode,BuildingArea,FeeArea,RoomStatus,RoomType)
+		values (#{no},#{DepartmentCode},#{Floor},#{RoomCode},#{BuildingArea},#{FeeArea},#{RoomStatus},#{RoomType})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update Room set DepartmentCode=#{DepartmentCode},Floor=#{Floor},RoomCode=#{RoomCode},BuildingArea=#{BuildingArea},FeeArea=#{FeeArea},RoomStatus=#{RoomStatus},RoomType=#{RoomType} 
+		where ROOMNO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from Room where ROOMNO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="RoomresultMap">
+	select * from Room
+	</select>
  
 </mapper>

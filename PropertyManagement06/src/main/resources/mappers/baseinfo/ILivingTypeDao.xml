@@ -8,5 +8,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="TYPENO" column="TYPENO"/>
 		<result property="TYPENAME" column="TYPENAME"/>
 	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_LivingType.nextval from dual
+			</selectKey>
+		insert into LivingType(TYPENO,TYPENAME)
+		values (#{no},#{TYPENAME})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update LivingType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from LivingType where TYPENO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="LivingTyperesultMap">
+	select * from LivingType
+	</select>
  
 </mapper>

@@ -24,5 +24,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delete" flushCache="true">
 	delete from BuildingType where TYPENO=#{no}
 	</delete>
+
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="BuildingTyperesultMap">
+	select * from BuildingType
+	</select>
  
 </mapper>

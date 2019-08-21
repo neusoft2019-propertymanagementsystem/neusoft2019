@@ -8,5 +8,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="TYPENO" column="TYPENO"/>
 		<result property="TYPENAME" column="TYPENAME"/>
 	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_HouseType.nextval from dual
+			</selectKey>
+		insert into HouseType(TYPENO,TYPENAME)
+		values (#{no},#{TYPENAME})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update HouseType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from HouseType where TYPENO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="HouseTyperesultMap">
+	select * from HouseType
+	</select>
  
 </mapper>

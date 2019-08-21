@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					TotalPackArea=#{TotalPackArea},TotalHome=#{TotalHome},TotalHouse=#{TotalHouse},TotalPack=#{TotalPack} where AREANO=#{no}
 </update>
 
-<delete>
+<delete id="delete" flushCache="true">
 delete from Area where AREANO=#{no}
 </delete>
 </mapper>

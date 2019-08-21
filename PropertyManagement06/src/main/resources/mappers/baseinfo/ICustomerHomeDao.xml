@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.ICustomerHomeDao">
+	<cache/>
+	<resultMap id="CustomerHomeresultMap" type="CustomerHome">
+		<id property="CHNO" column="CHNO"/>
+		<result property="ReceiveDate" column="ReceiveDate"/>
+		<result property="LiveDate" column="LiveDate"/>
+		<result property="FeeStartDate" column="FeeStartDate"/>
+		<result property="FeeEndDate" column="FeeEndDate"/>
+		<result property="HumanCount" column="HumanCount"/>
+	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="CHNO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_CustomerHome.nextval from dual
+			</selectKey>
+		insert into CustomerHome(CHNO,ReceiveDate,LiveDate,FeeStartDate,FeeEndDate,HumanCount)
+		values (#{no},#{ReceiveDate},#{LiveDate},#{FeeStartDate},#{FeeEndDate},#{HumanCount})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update CustomerHome set ReceiveDate=#{ReceiveDate},LiveDate=#{LiveDate},FeeStartDate=#{FeeStartDate},FeeEndDate=#{FeeEndDate},HumanCount=#{HumanCount} 
+		where CHNO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from CustomerHome where CHNO=#{no}
+	</delete>
+ 
+</mapper>

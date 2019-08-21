@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IBuildingTypeDao">
+	<cache/>
+	<resultMap id="BuildingTyperesultMap" type="BuildingType">
+		<id property="TYPENO" column="TYPENO"/>
+		<result property="TYPENAME" column="TYPENAME"/>
+	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_BuildingType.nextval from dual
+			</selectKey>
+		insert into BuildingType(TYPENO,TYPENAME)
+		values (#{no},#{TYPENAME})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update BuildingType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from BuildingType where TYPENO=#{no}
+	</delete>
+ 
+</mapper>

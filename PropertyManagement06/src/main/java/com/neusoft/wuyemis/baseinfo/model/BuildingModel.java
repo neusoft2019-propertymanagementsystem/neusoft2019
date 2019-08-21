@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Alias("Building")
 public class BuildingModel {
-	private int BuildingNO = 0;		//序号
+	private int BuildingNO = 0;		//序号pk
 	private String BCODE = null;		//楼号
 	private String BAddress = null;		//楼宇地址
 	private String Direction = null;		//楼宇朝向

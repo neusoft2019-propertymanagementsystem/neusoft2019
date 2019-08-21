@@ -2,10 +2,13 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //楼宇表
 @Data
+@Alias("Building")
 public class BuildingModel {
 	private int BuildingNO = 0;		//序号
 	private String BCODE = null;		//楼号

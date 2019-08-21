@@ -2,10 +2,13 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //房间表
 @Data
+@Alias("Room")
 public class RoomModel {
 	private int ROOMNO = 0;		//房间编号
 	private String DepartmentCode= null;		//单元

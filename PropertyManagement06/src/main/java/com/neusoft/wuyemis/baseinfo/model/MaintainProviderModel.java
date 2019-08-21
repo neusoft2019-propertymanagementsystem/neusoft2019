@@ -1,9 +1,12 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //维修单位表
 @Data
+@Alias("MaintainProvider")
 public class MaintainProviderModel {
 	private int ProviderNO = 0;		//单位序号
 	private String PName = null;		//单位名称

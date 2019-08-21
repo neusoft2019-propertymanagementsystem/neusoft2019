@@ -34,4 +34,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete id="delete" flushCache="true">
 delete from Area where AREANO=#{no}
 </delete>
+
+
 </mapper>

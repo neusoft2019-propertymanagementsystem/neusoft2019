@@ -2,10 +2,13 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //居住类型
 @Data
+@Alias("LivingType")
 public class LivingTypeModel {
 	private int TYPENO = 0;		//类型编号
 	private String TYPENAME = null;		//类型名称

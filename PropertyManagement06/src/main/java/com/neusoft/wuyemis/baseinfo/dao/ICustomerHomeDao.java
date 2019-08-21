@@ -7,8 +7,10 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
-import com.neusoft.wuyemis.baseinfo.model.CustomerHomeModel;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.neusoft.wuyemis.baseinfo.model.CustomerHomeModel;
+@Mapper
 public interface ICustomerHomeDao {
 	public void create(CustomerHomeModel customerHomeModel) throws Exception;
 	public void update(CustomerHomeModel customerHomeModel) throws Exception;

@@ -2,10 +2,13 @@ package com.neusoft.wuyemis.baseinfo.model;
 
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //客户房间表
 @Data
+@Alias("CustomerHome")
 public class CustomerHomeModel {
 	private int CHNO = 0;		//客户房间序号
 	private Date ReceiveDate = null;		//收房日期

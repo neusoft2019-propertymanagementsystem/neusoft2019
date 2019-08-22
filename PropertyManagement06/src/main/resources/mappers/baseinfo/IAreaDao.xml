@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</resultMap>
 	
-<insert id ="create" flushCache="true">
+<insert id ="create" keyProperty="no"   keyColumn="AREANO" useGeneratedKeys="true" flushCache="true">
 	insert into Area(AREANO,AREANAME,AAddress,Developer,TotalBuidingArea,TotalUseArea,TotalPackArea,TotalHome,TotalHouse,TotalPack)
 	values (#{AREANO},#{AREANAME},#{AAddress},#{Developer},#{TotalBuidingArea},#{TotalUseArea},#{TTotalPackArea},#{TotalHome},#{TotalHouse},#{TotalPack})
 </insert>	
@@ -36,6 +36,15 @@ delete from Area where AREANO=#{AREANO}
 <select id="selectListByAll" resultMap="ArearesultMap">
 select * from Area
 </select>
+  <!-- 取得所有小区列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="ArearesultMap">
+   select * from Area limit #{start},#{rows}
+  </select>
+  
+  <!-- 取得小区总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(AREANO), 0) from Area
+  </select>
 
 
 </mapper>

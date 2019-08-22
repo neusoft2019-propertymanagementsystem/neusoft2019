@@ -15,15 +15,18 @@ import com.neusoft.wuyemis.baseinfo.model.BuildingModel;
 
 @Mapper
 public interface IAreaDao {
-	public void create(AreaModel areaModel) throws Exception;
+	public void insert(AreaModel areaModel) throws Exception;
 	public void update(AreaModel areaModel) throws Exception;
 	public void delete(AreaModel areaModel) throws Exception;
 	//返回列表
 	public List<AreaModel> selectListByAll() throws Exception;
 	//返回带分页的列表 star:起始的记录号 rows:取得的个数
-	public List<AreaModel> selectListByAllWithPage(int star, int rows) throws Exception;
+	public List<AreaModel> selectListByAllWithPage(@Param("start") int start,@Param("rows") int rows) throws Exception;
 	//返回单个
 	public AreaModel selectListById(String AREANO) throws Exception;
+	
+	//取得小区的个数
+	public int selectCountByAll() throws Exception;
 	
 	//关联方法
 	//为小区增加一个楼宇

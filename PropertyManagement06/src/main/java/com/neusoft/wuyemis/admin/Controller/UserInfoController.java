@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.neusoft.wuyemis.admin.message.ResultMessage;
 import com.neusoft.wuyemis.admin.model.UserInfoModel;
 import com.neusoft.wuyemis.admin.service.IUserInfoService;
 

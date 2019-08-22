@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neusoft.wuyemis.baseinfo.model.AreaModel;
-import com.neusoft.wuyemis.baseinfo.secive.IAreaService;
+import com.neusoft.wuyemis.baseinfo.service.IAreaService;
 
 
 @RestController

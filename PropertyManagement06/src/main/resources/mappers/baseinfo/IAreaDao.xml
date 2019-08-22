@@ -18,27 +18,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</resultMap>
 	
-<insert id ="create" keyProperty="no" keyColumn="AREANO" useGeneratedKeys="true" flushCache="true">
-
-<selectKey keyProperty="no" resultType="int" order="BEFORE">
-	select SQ_Area.nextval from dual
-</selectKey>
+<insert id ="create" flushCache="true">
 	insert into Area(AREANO,AREANAME,AAddress,Developer,TotalBuidingArea,TotalUseArea,TotalPackArea,TotalHome,TotalHouse,TotalPack)
-	values (#{no},#{AREANAME},#{AAddress},#{Developer},#{TotalBuidingArea},#{TotalUseArea},#{TTotalPackArea},#{TotalHome},#{TotalHouse},#{TotalPack})
+	values (#{AREANO},#{AREANAME},#{AAddress},#{Developer},#{TotalBuidingArea},#{TotalUseArea},#{TTotalPackArea},#{TotalHome},#{TotalHouse},#{TotalPack})
 </insert>	
 
 
 <update id="update" flushCache="true">
 	update Area set AREANAME=#{AREANAME},AAddress=#{AAddress},Developer=#{Developer},TotalBuidingArea=#{TotalBuidingArea},TotalUseArea=#{TotalUseArea},
-					TotalPackArea=#{TotalPackArea},TotalHome=#{TotalHome},TotalHouse=#{TotalHouse},TotalPack=#{TotalPack} where AREANO=#{no}
+					TotalPackArea=#{TotalPackArea},TotalHome=#{TotalHome},TotalHouse=#{TotalHouse},TotalPack=#{TotalPack} where AREANO=#{AREANO}
 </update>
 
 <delete id="delete" flushCache="true">
-delete from Area where AREANO=#{no}
+delete from Area where AREANO=#{AREANO}
 </delete>
 
 <select id="selectListByAll" resultMap="ArearesultMap">
-select * from area
+select * from Area
 </select>
 
 

@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
@@ -9,7 +10,7 @@ import lombok.Data;
 //员工信息表
 @Data
 @Alias("Employees")
-public class EmployeesModel {
+public class EmployeesModel implements Serializable{
 	private String EMPID = null;		//员工编号
 	private int DEPTNO = 0;		//部门序号
 	private String EMPName = null;		//员工姓名

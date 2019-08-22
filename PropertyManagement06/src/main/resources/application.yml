@@ -2,6 +2,10 @@ server:
   port: 8080
 
 
+spring:
+  http:
+    encoding:
+      force: true
   
   jackson:
     date-format: yyyy-MM-dd

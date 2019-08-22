@@ -1,5 +1,7 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
+
 import org.apache.ibatis.type.Alias;
 
 import lombok.Data;
@@ -7,7 +9,7 @@ import lombok.Data;
 //维修单位表
 @Data
 @Alias("MaintainProvider")
-public class MaintainProviderModel {
+public class MaintainProviderModel implements Serializable{
 	private int ProviderNO = 0;		//单位序号
 	private String PName = null;		//单位名称
 	private String PContact= null;		//联系人

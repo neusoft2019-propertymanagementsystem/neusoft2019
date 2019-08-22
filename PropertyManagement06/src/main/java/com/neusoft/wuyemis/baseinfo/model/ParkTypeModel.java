@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import lombok.Data;
 //车位类型表
 @Data
 @Alias("ParkType")
-public class ParkTypeModel {
+public class ParkTypeModel implements Serializable{
 	private int TYPENO = 0;		//类型编号
 	private String TYPENAME = null;		//类型名称
 	private BigDecimal UnitPrice = null; 		//单价

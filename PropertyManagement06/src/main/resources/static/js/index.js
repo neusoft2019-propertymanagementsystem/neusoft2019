@@ -2,6 +2,7 @@
  * 系统主管理JS
  * @Author:张云强
  */
+
 $.jgrid.defaults.styleUI = 'Bootstrap';
 $(function(){
 	

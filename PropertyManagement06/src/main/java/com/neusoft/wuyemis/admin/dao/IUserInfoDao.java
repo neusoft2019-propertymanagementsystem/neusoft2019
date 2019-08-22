@@ -18,4 +18,6 @@ public interface IUserInfoDao {
 	public void delete(UserInfoModel userInfoMosel) throws Exception;
 	
 	public List<UserInfoModel> selectListByAll() throws Exception;
+
+	public UserInfoModel selectListById(String id);
 }

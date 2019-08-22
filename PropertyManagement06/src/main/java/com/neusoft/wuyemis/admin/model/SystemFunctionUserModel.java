@@ -3,6 +3,7 @@ package com.neusoft.wuyemis.admin.model;
 public class SystemFunctionUserModel {
 	private int funNo = 0;		//功能号
 	private String userId = null;		//操作员账号
+	
 	public int getFunNo() {
 		return funNo;
 	}

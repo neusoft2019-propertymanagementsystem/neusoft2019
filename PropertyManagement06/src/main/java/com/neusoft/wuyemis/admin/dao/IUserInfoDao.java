@@ -2,13 +2,15 @@ package com.neusoft.wuyemis.admin.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.neusoft.wuyemis.admin.model.UserInfoModel;
 /*
  * 模块：admin
  * UserInfo的Dao层接口
  * @Author: 张云强
  */
-
+@Mapper
 public interface IUserInfoDao {
 	
 	public void create(UserInfoModel userInfoMosel) throws Exception;

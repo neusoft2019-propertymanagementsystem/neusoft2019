@@ -32,7 +32,7 @@ public class UserInfoController implements IUserInfoService {
 	}
 
 	@PostMapping("/modify")
-	public ResultMessage<UserInfoModel> modify(UserInfoModel userinfoModel) throws Exception {
+	public void modify(UserInfoModel userinfoModel) throws Exception {
  
 
 

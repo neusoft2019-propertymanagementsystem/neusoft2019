@@ -2,37 +2,46 @@ package com.neusoft.wuyemis.admin.Controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.neusoft.wuyemis.admin.dao.ISystemFunctionDao;
 import com.neusoft.wuyemis.admin.model.SystemFunctionModel;
+import com.neusoft.wuyemis.admin.service.ISystemFuntionService;
 /*
  * 模块：admin
- * 角色控制层Controller
+ *SystemFuntion控制层Controller
  * @Author: 张云强
  */
+@RequestMapping
+@RestController
 public class SystemFuntionController implements ISystemFunctionDao {
 
-	@Override
+	@Autowired
+	private ISystemFuntionService systemFuntionService=null;
+	
+	@GetMapping
 	public void create(SystemFunctionModel systemfuntionModel) throws Exception {
-		// TODO Auto-generated method stub
-
+		
 	}
 
-	@Override
+	@GetMapping
 	public void update(SystemFunctionModel systemfuntionModel) throws Exception {
-		// TODO Auto-generated method stub
+	
 
 	}
 
-	@Override
+	@GetMapping
 	public void delete(SystemFunctionModel systemfuntionModel) throws Exception {
-		// TODO Auto-generated method stub
+		
 
 	}
 
-	@Override
+	@GetMapping(value="/get/list")
 	public List<SystemFunctionModel> selsctListByAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return systemFuntionService.selsctListByAll();
 	}
 
 }

@@ -3,7 +3,7 @@ package com.neusoft.wuyemis.admin.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,56 +24,56 @@ public class UserInfoController implements IUserInfoService {
 	@Autowired
 	private IUserInfoService userInfoService=null;
 	
-	@PostMapping("/register")
+	@GetMapping("/register")
 	public void register(UserInfoModel userinfoModel) throws Exception {
 
 
 
 	}
 
-	@PostMapping("/modify")
+	@GetMapping("/modify")
 	public void modify(UserInfoModel userinfoModel) throws Exception {
  
 
 
 	}
 
-	@PostMapping
+	@GetMapping
 	public void changePassword(String idString, String password) throws Exception {
 		
 
 	}
 
-	@PostMapping
+	@GetMapping
 	public void changeRole(String id, String role) throws Exception {
 		
 
 	}
 
-	@PostMapping
+	@GetMapping
 	public boolean validate(String id, String password) throws Exception {
 		
 		return false;
 	}
 
-	@PostMapping
+	@GetMapping
 	public void active(String id) throws Exception {
 		
 
 	}
 
-	@PostMapping
+	@GetMapping
 	public void delete(UserInfoModel userinfoModel) throws Exception {
 		
 	}
 
-	@PostMapping
+	@GetMapping(value="/get/list")
 	public List<UserInfoModel> selsetListByAll() throws Exception {
 		
-		return null;
+		return userInfoService.selsetListByAll();
 	}
 
-	@PostMapping
+	@GetMapping
 	public UserInfoModel getById(String id) throws Exception {
 		
 		return null;

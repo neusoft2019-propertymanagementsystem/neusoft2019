@@ -7,11 +7,12 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.neusoft.wuyemis.baseinfo.model.BuildingModel;
 import com.neusoft.wuyemis.baseinfo.model.BuildingTypeModel;
-
+@Mapper
 public interface IBuildingTypeDao {
 	public void create(BuildingTypeModel buildingTypeModel) throws Exception;
 	public void update(BuildingTypeModel buildingTypeModel) throws Exception;

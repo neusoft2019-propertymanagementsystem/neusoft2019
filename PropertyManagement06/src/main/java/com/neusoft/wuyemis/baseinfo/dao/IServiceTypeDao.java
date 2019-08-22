@@ -2,8 +2,10 @@ package com.neusoft.wuyemis.baseinfo.dao;
 
 import java.util.List;
 
-import com.neusoft.wuyemis.baseinfo.model.ServiceTypeModel;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.neusoft.wuyemis.baseinfo.model.ServiceTypeModel;
+@Mapper
 public interface IServiceTypeDao {
 	public void create(ServiceTypeModel serviceTypeModel) throws Exception;
 	public void update(ServiceTypeModel serviceTypeModel) throws Exception;

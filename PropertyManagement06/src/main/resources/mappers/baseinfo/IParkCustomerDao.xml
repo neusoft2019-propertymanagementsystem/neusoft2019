@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.wuyemis.baseinfo.dao.IParkCustomerDao">
+	<cache/>
+	<resultMap id="ParkCustomerresultMap" type="ParkCustomer">
+		<id property="PCNO" column="PCNO"/>
+		<result property="CarCode" column="CarCode"/>
+		<result property="StartDate" column="StartDate"/>
+		<result property="EndDate" column="EndDate"/>
+		<result property="PCStatus" column="PCStatus"/>
+	</resultMap>
+	
+	<insert id ="create" keyProperty="no" keyColumn="PCNO" useGeneratedKeys="true" flushCache="true">
+			<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select SQ_ParkCustomer.nextval from dual
+			</selectKey>
+		insert into ParkCustomer(PCNO,CarCode,StartDate,EndDate,PCStatus)
+		values (#{no},#{CarCode},#{StartDate},#{EndDate},#{PCStatus})
+	</insert>
+
+	<update id="update" flushCache="true">
+		update ParkCustomer set CarCode=#{CarCode},StartDate=#{StartDate},EndDate=#{EndDate},PCStatus=#{PCStatus} where PCNO=#{no}
+	</update>
+
+	<delete id="delete" flushCache="true">
+	delete from ParkCustomer where PCNO=#{no}
+	</delete>
+	
+	<!-- 无关联查询列表 -->
+	<select id="selectListByAll" resultMap="ParkCustomerresultMap">
+	select * from ParkCustomer
+	</select>
+ 
+</mapper>

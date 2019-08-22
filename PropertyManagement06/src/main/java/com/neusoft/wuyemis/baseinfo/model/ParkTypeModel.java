@@ -3,10 +3,13 @@ package com.neusoft.wuyemis.baseinfo.model;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //车位类型表
 @Data
+@Alias("ParkType")
 public class ParkTypeModel {
 	private int TYPENO = 0;		//类型编号
 	private String TYPENAME = null;		//类型名称

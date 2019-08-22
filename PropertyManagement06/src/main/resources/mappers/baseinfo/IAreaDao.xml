@@ -15,6 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="TotalHome" column="TotalHome"/>
 		<result property="TotalHouse" column="TotalHouse"/>
 		<result property="TotalPack" column="TotalPack"/>
+		
 	</resultMap>
 	
 <insert id ="create" keyProperty="no" keyColumn="AREANO" useGeneratedKeys="true" flushCache="true">
@@ -24,14 +25,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </selectKey>
 	insert into Area(AREANO,AREANAME,AAddress,Developer,TotalBuidingArea,TotalUseArea,TotalPackArea,TotalHome,TotalHouse,TotalPack)
 	values (#{no},#{AREANAME},#{AAddress},#{Developer},#{TotalBuidingArea},#{TotalUseArea},#{TTotalPackArea},#{TotalHome},#{TotalHouse},#{TotalPack})
-</insert>
+</insert>	
+
 
 <update id="update" flushCache="true">
 	update Area set AREANAME=#{AREANAME},AAddress=#{AAddress},Developer=#{Developer},TotalBuidingArea=#{TotalBuidingArea},TotalUseArea=#{TotalUseArea},
 					TotalPackArea=#{TotalPackArea},TotalHome=#{TotalHome},TotalHouse=#{TotalHouse},TotalPack=#{TotalPack} where AREANO=#{no}
 </update>
 
-<delete>
+<delete id="delete" flushCache="true">
 delete from Area where AREANO=#{no}
 </delete>
+
+<select id="selectListByAll" resultMap="ArearesultMap">
+select * from area
+</select>
+
+
 </mapper>

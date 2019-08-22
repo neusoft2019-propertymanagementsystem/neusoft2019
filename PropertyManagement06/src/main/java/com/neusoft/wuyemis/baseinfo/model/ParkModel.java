@@ -3,9 +3,12 @@ package com.neusoft.wuyemis.baseinfo.model;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 //车位表
 @Data
+@Alias("Park")
 public class ParkModel {
 	private int ParkNO = 0;		//车位序号
 	private String ParkCode = null;		//车位编码

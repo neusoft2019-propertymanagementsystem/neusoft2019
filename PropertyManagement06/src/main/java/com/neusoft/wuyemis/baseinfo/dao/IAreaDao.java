@@ -7,12 +7,13 @@
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.neusoft.wuyemis.baseinfo.model.AreaModel;
 import com.neusoft.wuyemis.baseinfo.model.BuildingModel;
 
-
+@Mapper
 public interface IAreaDao {
 	public void create(AreaModel areaModel) throws Exception;
 	public void update(AreaModel areaModel) throws Exception;

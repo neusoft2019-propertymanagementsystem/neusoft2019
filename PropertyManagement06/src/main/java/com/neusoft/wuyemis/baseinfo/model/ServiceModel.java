@@ -1,9 +1,12 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import org.apache.ibatis.type.Alias;
+
 import lombok.Data;
 
 //服务表
 @Data
+@Alias("Service")
 public class ServiceModel {
 	private int SPNO = 0;		//服务序号
 	private int TYPENO = 0;		//服务类型编号

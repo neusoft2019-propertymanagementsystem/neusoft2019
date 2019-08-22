@@ -11,7 +11,7 @@
 	var page=1;
 	var pageCount=0;
 	var AreaNo=0; //选择的部门编号
-	
+	 
 	$("span#mainpagetille").html("小区管理");
 	
 	function getListInfo(){

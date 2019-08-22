@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import lombok.Data;
 //小区表
 @Data
 @Alias("Area")
-public class AreaModel {
+public class AreaModel implements Serializable{
 	private int AREANO=0;	//小区编号
 	private String AREANAME = null;		//小区名称
 	private String AAddress = null;		//小区地址

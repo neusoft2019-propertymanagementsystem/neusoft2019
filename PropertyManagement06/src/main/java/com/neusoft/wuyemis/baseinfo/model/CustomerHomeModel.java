@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
@@ -9,7 +10,7 @@ import lombok.Data;
 //客户房间表
 @Data
 @Alias("CustomerHome")
-public class CustomerHomeModel {
+public class CustomerHomeModel implements Serializable{
 	private int CHNO = 0;		//客户房间序号
 	private Date ReceiveDate = null;		//收房日期
 	private Date LiveDate= null;		//入住日期

@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import lombok.Data;
 //车位表
 @Data
 @Alias("Park")
-public class ParkModel {
+public class ParkModel implements Serializable{
 	private int ParkNO = 0;		//车位序号
 	private String ParkCode = null;		//车位编码
 	private String Location = null;		//位置

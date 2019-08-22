@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -25,50 +26,60 @@
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/jqgrid/css/ui.jqgrid-bootstrap.css" />
+  <!-- jquery UI CSS -->
   <link rel="stylesheet" href="dist/jqueryui/jquery-ui.min.css">
+  <!--  -->
   
- <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- 引入Bootstrap3-dialog -->
+  <link rel="stylesheet" href="dist/bootstrap3-dialog/css/bootstrap-dialog.min.css">
+  
+  <script type="text/javascript" src="dist/jquery/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- jquery UI JS -->
+  <script type="text/javascript" src="dist/jqueryui/jquery-ui.min.js"></script>
+	<!-- FastClick -->
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- Sparkline -->
+	<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+	<!-- jvectormap  -->
+	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<!-- SlimScroll -->
+	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		
+	<script src="dist/bootstrap3-dialog/js/bootstrap-dialog.min.js"></script>
+	<!-- JQuery Form Plugin -->
+	<script type="text/javascript" src="dist/jqueryform/jquery.form.min.js"></script>
+	
+	<script type="text/ecmascript" src="dist/jqgrid/js/i18n/grid.locale-cn.js"></script>
+	
+	<script type="text/ecmascript" src="dist/jqgrid/js/jquery.jqGrid.js"></script>
+	<!-- jQuery validate验证框架 -->
+	<script src="dist/jqueryvalidate/jquery.validate.min.js"></script>
+	<script src="dist/jqueryvalidate/additional-methods.min.js"></script>
+	<script src="dist/jqueryvalidate/localization/messages_zh.min.js"></script>
+	<!-- 引入自己定义的验证规则 -->
+  	<script type="text/javascript" src="index.js"></script>
+  	
 
-<script type="text/javascript" src="dist/jqueryui/jquery-ui.min.js"></script>
-
- </head>
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -123,14 +134,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="employee/main.html"><i class="fa fa-circle-o"></i>员工管理</a></li>
-           <li><a href="#"><i class="fa fa-circle-o"></i> 小区管理</a></li>
-           <li><a href="#"><i class="fa fa-circle-o"></i> 楼宇管理</a></li>
-		   <li><a href="#"><i class="fa fa-circle-o"></i> 房间档案管理</a></li>
+           <li><a href="employee/main.html"><i class="fa fa-circle-o"></i>员工管理</a></li>
+           <li><a href="AreaManager/main.html"><i class="fa fa-circle-o"></i> 小区管理</a></li>
+           <li><a href="BuildingManager/main.html"><i class="fa fa-circle-o"></i> 楼宇管理</a></li>
+		   <li><a href="RoomManager/main.html"><i class="fa fa-circle-o"></i> 房间档案管理</a></li>
 		   <li><a href="#"><i class="fa fa-circle-o"></i> 房间状态图示</a></li>
-			
           </ul>
-        </li>
+         </li>
 		 <!--客户管理-->
 		<li class="treeview menu-open">
 		  <a href="#">

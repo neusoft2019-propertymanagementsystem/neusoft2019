@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.ibatis.type.Alias;
@@ -9,7 +10,7 @@ import lombok.Data;
 //楼宇表
 @Data
 @Alias("Building")
-public class BuildingModel {
+public class BuildingModel implements Serializable{
 	private int BuildingNO = 0;		//序号pk
 	private String BCODE = null;		//楼号
 	private String BAddress = null;		//楼宇地址

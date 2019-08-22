@@ -1,5 +1,6 @@
 package com.neusoft.wuyemis.baseinfo.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.ibatis.type.Alias;
@@ -9,7 +10,7 @@ import lombok.Data;
 //房间表
 @Data
 @Alias("Room")
-public class RoomModel {
+public class RoomModel implements Serializable{
 	private int ROOMNO = 0;		//房间编号
 	private String DepartmentCode= null;		//单元
 	private String Floor= null;		//楼层

@@ -1,4 +1,5 @@
 package com.neusoft.wuyemis.baseinfo.model;
+import java.io.Serializable;
 //客户表Model
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Data;
 @Data
 @Alias("Customer")
-public class CustomerModel {
+public class CustomerModel implements Serializable{
 	private int CustomerNO = 0;  //客户序号
 	private String CCODE = null;		//客户编码
 	private String CNAME = null;		//客户名称

@@ -10,14 +10,20 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+
 import com.neusoft.wuyemis.baseinfo.model.BuildingModel;
 import com.neusoft.wuyemis.baseinfo.model.BuildingTypeModel;
 @Mapper
 public interface IBuildingTypeDao {
-	public void create(BuildingTypeModel buildingTypeModel) throws Exception;
+	public void insert(BuildingTypeModel buildingTypeModel) throws Exception;
 	public void update(BuildingTypeModel buildingTypeModel) throws Exception;
 	public void delete(BuildingTypeModel buildingTypeModel) throws Exception;
 	public List<BuildingTypeModel> selectListByAll() throws Exception;
+	
+	//返回带分页的列表 star:起始的记录号 rows:取得的个数
+	public List<BuildingTypeModel> selectListByAllWithPage(@Param("start") int start,@Param("rows") int rows) throws Exception;
+	//取得建筑类型总数
+	public int selectCountByAll() throws Exception;
 	
 	//关联方法
 	//建筑类型增加楼宇

@@ -16,7 +16,6 @@ public class AreaServiceImpl implements IAreaService {
 	@Autowired
 	private IAreaDao areaDao= null; 
 	@Autowired
-	
 	//取得所有小区列表
 	@Override
 	public List<AreaModel> selectListByAll() throws Exception {
@@ -38,13 +37,14 @@ public class AreaServiceImpl implements IAreaService {
 	//删除小区
 	@Override
 	public void deleteArea(AreaModel areaModel) throws Exception {
-		// TODO Auto-generated method stub
+		areaDao.delete(areaModel);
 		
 	}
 	//修改小区
 	@Override
 	public void modifyArea(AreaModel areaModel) throws Exception {
-		// TODO Auto-generated method stub
+		areaDao.delete(areaModel);
+		areaDao.insert(areaModel);
 		
 	}
 

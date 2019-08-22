@@ -10,24 +10,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_LivingType.nextval from dual
-			</selectKey>
 		insert into LivingType(TYPENO,TYPENAME)
-		values (#{no},#{TYPENAME})
+		values (#{TYPENO},#{TYPENAME})
 	</insert>
 
 	<update id="update" flushCache="true">
-		update LivingType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+		update LivingType set TYPENAME=#{TYPENAME} where TYPENO=#{TYPENO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from LivingType where TYPENO=#{no}
+	delete from LivingType where TYPENO=#{TYPENO}
 	</delete>
 	
 	<!-- 无关联查询列表 -->
 	<select id="selectListByAll" resultMap="LivingTyperesultMap">
 	select * from LivingType
 	</select>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="LivingTyperesultMap">
+   select * from LivingType limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(LivingTypeNO), 0) from LivingType
+  </select>
  
 </mapper>

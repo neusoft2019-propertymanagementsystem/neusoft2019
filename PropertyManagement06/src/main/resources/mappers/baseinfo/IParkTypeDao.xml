@@ -32,5 +32,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectListByAll" resultMap="ParkTyperesultMap">
 	select * from ParkType
 	</select>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="ParkTyperesultMap">
+   select * from ParkType limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(ParkTypeNO), 0) from ParkType
+  </select>
  
 </mapper>

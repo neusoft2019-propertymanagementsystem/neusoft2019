@@ -21,11 +21,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="CustomerNO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_Customer.nextval from dual
-			</selectKey>
 		insert into Customer(CustomerNO,CCODE,CNAME,Contact,CardCode,Mobile,Tel,Fax,QQ,WeiXin,FeeStartDate,FeeEndDate,CStatus)
-		values (#{no},#{CCODE},#{CNAME},#{Contact},#{CardCode},#{Mobile},#{Tel},#{Fax},#{QQ},#{WeiXin},#{FeeStartDate},#{FeeEndDate},#{CStatus})
+		values (#{CustomerNO},#{CCODE},#{CNAME},#{Contact},#{CardCode},#{Mobile},#{Tel},#{Fax},#{QQ},#{WeiXin},#{FeeStartDate},#{FeeEndDate},#{CStatus})
 	</insert>
 
 	<update id="update" flushCache="true">
@@ -41,5 +38,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectListByAll" resultMap="CustomerresultMap">
 	select * from Customer
 	</select>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="CustomerresultMap">
+   select * from Customer limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(CustomerNO), 0) from Customer
+  </select>
  
 </mapper>

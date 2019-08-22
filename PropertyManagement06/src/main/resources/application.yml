@@ -1,13 +1,14 @@
 server:
   port: 8080
-
-
-spring:
-  http:
-    encoding:
-      force: true
   
-  jackson:
+spring:
+ datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.43.179:3306/wumis?serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+ jackson:
     date-format: yyyy-MM-dd
     time-zone: GMT+8
       

@@ -16,6 +16,7 @@ import com.neusoft.wuyemis.admin.service.IUserInfoService;
  * 操作员控制层Controller
  * @Author: 张云强
  */
+
 @RequestMapping
 @RestController(value="/userInfo")
 public class UserInfoController implements IUserInfoService {

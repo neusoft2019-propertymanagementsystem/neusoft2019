@@ -14,25 +14,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="CHNO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_CustomerHome.nextval from dual
-			</selectKey>
 		insert into CustomerHome(CHNO,ReceiveDate,LiveDate,FeeStartDate,FeeEndDate,HumanCount)
-		values (#{no},#{ReceiveDate},#{LiveDate},#{FeeStartDate},#{FeeEndDate},#{HumanCount})
+		values (#{CHNO},#{ReceiveDate},#{LiveDate},#{FeeStartDate},#{FeeEndDate},#{HumanCount})
 	</insert>
 
 	<update id="update" flushCache="true">
 		update CustomerHome set ReceiveDate=#{ReceiveDate},LiveDate=#{LiveDate},FeeStartDate=#{FeeStartDate},FeeEndDate=#{FeeEndDate},HumanCount=#{HumanCount} 
-		where CHNO=#{no}
+		where CHNO=#{CHNO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from CustomerHome where CHNO=#{no}
+	delete from CustomerHome where CHNO=#{CHNO}
 	</delete>
 	
 	<!-- 无关联查询列表 -->
 	<select id="selectListByAll" resultMap="CustomerHomeresultMap">
 	select * from CustomerHome
 	</select>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="CustomerHomeresultMap">
+   select * from CustomerHome limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(CustomerHomeNO), 0) from CustomerHome
+  </select>
  
 </mapper>

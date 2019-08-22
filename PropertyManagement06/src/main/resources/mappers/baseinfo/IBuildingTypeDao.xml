@@ -10,9 +10,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_BuildingType.nextval from dual
-			</selectKey>
 		insert into BuildingType(TYPENO,TYPENAME)
 		values (#{no},#{TYPENAME})
 	</insert>
@@ -29,5 +26,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectListByAll" resultMap="BuildingTyperesultMap">
 	select * from BuildingType
 	</select>
+	
+	<!-- 取得所有建筑类型的列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="BuildingTyperesultMap">
+   select * from BuildingType limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得建筑类型总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(TYPENO), 0) from BuildingType 
+  </select>
  
 </mapper>

@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Alias("BuildingType")
 public class BuildingTypeModel implements Serializable{
-	private String TYPENO = null;		//类型编号
+    private int TYPENO = 0;		//类型编号
 	private String TYPENAME = null;		//类型名称
 	
 	//关联的楼宇类型列表

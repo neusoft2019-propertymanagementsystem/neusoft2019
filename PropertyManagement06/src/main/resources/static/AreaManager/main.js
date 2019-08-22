@@ -5,7 +5,7 @@
  */
 
 
-//取得小区的列表，分页模式
+
 (function(){
 	var rows=10;
 	var page=1;
@@ -34,6 +34,5 @@
 					$(this).css("background-color","#CDCD9A");
 				});
 		 });
-	}	
-	
+	}		
 });

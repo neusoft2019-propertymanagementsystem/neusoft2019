@@ -14,11 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="BuildingNO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_Building.nextval from dual
-			</selectKey>
-		insert into Building(BuildingNO,BCODE,BAddress,Direction,TotalHome,TotalHouse)
-		values (#{no},#{BCODE},#{BAddress},#{Direction},#{TotalHome},#{TotalHouse})
+		insert into Building(BCODE,BAddress,Direction,TotalHome,TotalHouse)
+		values (#{BCODE},#{BAddress},#{Direction},#{TotalHome},#{TotalHouse})
 	</insert>
 
 	<update id="update" flushCache="true">
@@ -26,11 +23,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from Building where BuildingNO=#{no}
+	delete from Building where BuildingNO=#{Buildingno}
 	</delete>
 	<!-- 无关联查询列表 -->
 	<select id="selectListByAll" resultMap="BuildingresultMap">
 	select * from Building
 	</select>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="BuildingresultMap">
+   select * from Building limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(BuildingNO), 0) from Building
+  </select>
  
 	</mapper>

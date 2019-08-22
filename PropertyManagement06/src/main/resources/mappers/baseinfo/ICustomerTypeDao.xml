@@ -10,19 +10,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_CustomerType.nextval from dual
-			</selectKey>
 		insert into CustomerType(TYPENO,TYPENAME)
-		values (#{no},#{TYPENAME})
+		values (#{TYPENO},#{TYPENAME})
 	</insert>
 
 	<update id="update" flushCache="true">
-		update CustomerType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+		update CustomerType set TYPENAME=#{TYPENAME} where TYPENO=#{TYPENO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from CustomerType where TYPENO=#{no}
+	delete from CustomerType where TYPENO=#{TYPENO}
 	</delete>
+	
+  <!-- 取得所有列表，带分页 -->
+  <select id="selectListByAllWithPage" resultMap="CustomerTyperesultMap">
+   select * from CustomerType limit #{start},#{rows}
+  </select>
+    
+  <!-- 取得总个数 -->
+  <select id="selectCountByAll" resultType="int">
+   select IFNULL(count(CustomerTypeNO), 0) from CustomerType
+  </select>
  
 </mapper>

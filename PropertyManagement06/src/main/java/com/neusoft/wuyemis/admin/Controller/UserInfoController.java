@@ -1,78 +1,82 @@
-package com.neusoft.wuyemis.admin.service.impl;
+package com.neusoft.wuyemis.admin.Controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-import com.neusoft.wuyemis.admin.dao.IUserInfoDao;
+import com.neusoft.wuyemis.admin.message.ResultMessage;
 import com.neusoft.wuyemis.admin.model.UserInfoModel;
 import com.neusoft.wuyemis.admin.service.IUserInfoService;
+
 /*
  * 模块：admin
- * UserInfo的业务实现类
+ * 操作员控制层Controller
  * @Author: 张云强
  */
-@Service
-@Transactional
-public class UserInfoServiceImpl implements IUserInfoService {
-    
-	//取得UserInfo的Dao接口对象
-	@Autowired
-	private IUserInfoDao  userInfoDao=null;
+@RequestMapping
+@RestController(value="/userInfo")
+public class UserInfoController implements IUserInfoService {
 	
-	@Override
+	
+	@Autowired
+	private IUserInfoService userInfoService=null;
+	
+	@GetMapping("/register")
 	public void register(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.create(userinfoModel);
+
+
 
 	}
 
-	@Override
+	@GetMapping("/modify")
 	public void modify(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.update(userinfoModel);
+ 
+
 
 	}
 
-	@Override
+	@GetMapping
 	public void changePassword(String idString, String password) throws Exception {
 		
+
 	}
 
-	@Override
+	@GetMapping
 	public void changeRole(String id, String role) throws Exception {
-		// TODO Auto-generated method stub
+		
 
 	}
 
-	@Override
+	@GetMapping
 	public boolean validate(String id, String password) throws Exception {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
-	@Override
+	@GetMapping
 	public void active(String id) throws Exception {
-		// TODO Auto-generated method stub
+		
 
 	}
 
-	@Override
+	@GetMapping
 	public void delete(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.delete(userinfoModel);
+		
 	}
 
-	@Override
+	@GetMapping(value="/get/list")
 	public List<UserInfoModel> selsetListByAll() throws Exception {
 		
-		return userInfoDao.selectListByAll();
+		return userInfoService.selsetListByAll();
 	}
 
-	@Override
+	@GetMapping
 	public UserInfoModel getById(String id) throws Exception {
 		
-		return userInfoDao.selectListById(id);
+		return null;
 	}
 
 }

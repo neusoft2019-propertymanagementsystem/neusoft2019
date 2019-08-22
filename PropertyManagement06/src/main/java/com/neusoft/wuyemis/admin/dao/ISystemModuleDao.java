@@ -3,6 +3,8 @@ package com.neusoft.wuyemis.admin.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.neusoft.wuyemis.admin.model.SystemFunctionModel;
 import com.neusoft.wuyemis.admin.model.SystemFunctionUserModel;
 import com.neusoft.wuyemis.admin.model.SystemModuleModel;
@@ -11,6 +13,7 @@ import com.neusoft.wuyemis.admin.model.SystemModuleModel;
  * SystemModule的DAO层接口
  * @Author: 张云强
  */
+@Mapper
 public interface ISystemModuleDao {
      
 	public void create(SystemModuleModel systemModuleModel) throws Exception;

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 系统模块ISystemModuleDao接口Mapping映射 -->  
+<mapper namespace="com.neusoft.wuyemis.admin.dao.ISystemModuleDao">
+ 
+  <cache/> 
+  <insert id="create" keyProperty="no" keyColumn=""  useGeneratedKeys="true" flushCache="true">
+   insert into SystemModule(MNAME) values (#{mname})
+  
+  </insert>
+  <update id="update" flushCache="true">
+  insert into SystemModule set FUNNAME=#{funName} where MNO=#{no}
+   </update>
+ <delete id="delete" flushCache="true">
+ delete from SystemModule where MNO=#{no}
+ 
+ </delete>
+  <select>
+  
+  </select>
+  
+</mapper>

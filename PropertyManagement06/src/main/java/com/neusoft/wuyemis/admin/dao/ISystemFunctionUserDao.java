@@ -2,6 +2,8 @@ package com.neusoft.wuyemis.admin.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.neusoft.wuyemis.admin.model.SystemFunctionModel;
 import com.neusoft.wuyemis.admin.model.SystemFunctionUserModel;
 /*
@@ -9,7 +11,7 @@ import com.neusoft.wuyemis.admin.model.SystemFunctionUserModel;
  * SystemFunctionUser的Dao层接口
  * @Author: 张云强
  */
-
+@Mapper
 public interface ISystemFunctionUserDao {
      
 	public void create(SystemFunctionUserModel systemfuntionMdoel) throws Exception;

@@ -44,10 +44,31 @@ $(function(){
 			//验证数据
 			$("form#BuildingTypeAddForm" ).validate({
 				  rules: {
-				    TYPENO: {
+					 AREANAME: {
 				      required: true
 				    },
-				    TYPENAME:{
+				    AAddress:{
+				    	required: true
+				    }
+				    Developer:{
+				    	required: true
+				    }
+				    TotalBuidingArea:{
+				    	required: true
+				    }
+				    TotalUseArea:{
+				    	required: true
+				    }
+				    TotalPackArea:{
+				    	required: true
+				    }
+				    TotalHome:{
+				    	required: true
+				    }
+				    TotalHouse:{
+				    	required: true
+				    }
+				    TotalPack:{
 				    	required: true
 				    }
 				  },

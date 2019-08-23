@@ -67,7 +67,7 @@ public class UserInfoController implements IUserInfoService {
 		
 	}
 
-	@GetMapping(value="/get/list")
+	@GetMapping(value="/list")
 	public List<UserInfoModel> selsetListByAll() throws Exception {
 		
 		return userInfoService.selsetListByAll();

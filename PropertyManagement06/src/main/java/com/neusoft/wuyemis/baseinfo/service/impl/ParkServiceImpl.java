@@ -43,19 +43,26 @@ public class ParkServiceImpl implements IParkService {
 	@Override
 	public int getCountByAll() throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return parkdao.selectCountByAll();
 	}
 
 	@Override
 	public int getPagaCountByAll(int rows) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		int pageCount=0;
+		int count=this.getCountByAll();
+		if(count%rows==0) {
+			pageCount=count/rows;
+		}
+		else {
+			pageCount=count/rows+1;
+		}
+		return pageCount;
 	}
 
 	@Override
 	public List<ParkModel> getListByAllWithPage(int rows, int page) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return parkdao.selectListByAllWithPage(rows*(page-1), rows);
 	}
 
 }

@@ -5,7 +5,8 @@ import org.apache.ibatis.type.Alias;
 import lombok.Data;
 
 //系统功能表
-
+@Alias("SystemFunction")
+@Data
 public class SystemFunctionModel {
 	private int FUNNO = 0;		//功能编号
 	private int MNO = 0;		//模块编号

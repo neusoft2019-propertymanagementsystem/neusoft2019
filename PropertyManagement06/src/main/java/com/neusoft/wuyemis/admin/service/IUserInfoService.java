@@ -11,15 +11,12 @@ import com.neusoft.wuyemis.admin.model.UserInfoModel;
  */
 public interface IUserInfoService {
 	//注册用户
-	public void register(UserInfoModel userinfoModel) throws Exception;
+	public void add(UserInfoModel userinfo) throws Exception;
 	//修改用户
-	public void modify(UserInfoModel userinfoModel) throws Exception;
-	//修改密码
-	public void changePassword(String idString ,String password) throws Exception;
-	//修改角色
-	public void changeRole(String id,String role) throws Exception;
+	public void modify(UserInfoModel userinfo) throws Exception;
+
     //删除
-	public void delete(UserInfoModel userinfoModel) throws Exception;
+	public void delete(UserInfoModel userinfo) throws Exception;
 	//取列表
 	public List<UserInfoModel> selsetListByAll()throws Exception;
 	//

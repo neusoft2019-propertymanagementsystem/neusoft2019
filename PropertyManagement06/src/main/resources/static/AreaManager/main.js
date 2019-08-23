@@ -58,7 +58,7 @@ $(function(){
 					    TYPENAME:{
 					    	required:"部门名称为空"
 					    }
-				 }
+				 } 
 			});
 			//拦截增加表单提交
 			$("form#BuildingTypeAddForm").ajaxForm(function(result){

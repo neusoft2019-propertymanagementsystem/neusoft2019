@@ -21,7 +21,7 @@ $(function(){
 				//显示列表
 				$("table#buildingTypeTable tbody").html("");
 				for(var i=0;i<data.list.length;i++){
-					var tr="<tr id='"+data.list[i].TYPENO+"'><td>"+data.list[i].TYPENAME+"</td></tr>";
+					var tr="<tr id='"+data.list[i].typeno+"'><td>"+data.list[i].typename+"</td></tr>";
 					$("table#buildingTypeTable tbody").append(tr);
 				}
 				//定义表格行的点击时间，取得选择的编号
@@ -33,8 +33,6 @@ $(function(){
 		 });
 	}
 
-	
-	
 	
 	
 	getListInfo();

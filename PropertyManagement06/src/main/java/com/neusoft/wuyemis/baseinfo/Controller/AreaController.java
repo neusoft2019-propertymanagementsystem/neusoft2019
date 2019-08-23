@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neusoft.wuyemis.baseinfo.model.AreaModel;
@@ -45,9 +46,6 @@ public class AreaController {
 	}
 
 	
-	
-/*
- * 未实现
 	//取得小区列表
 	@GetMapping(value="/list/all/page")
 	public ResultMessage<AreaModel> getListByAllWitPage(@RequestParam(required = false,defaultValue ="10") int rows,@RequestParam(required = false,defaultValue = "1") int page) throws Exception{
@@ -58,6 +56,5 @@ public class AreaController {
 		result.setPage(page);
 		result.setRows(rows);
 		return result;
-	}
-*/
+		}
 }

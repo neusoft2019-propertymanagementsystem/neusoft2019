@@ -19,14 +19,14 @@ $(function(){
 		url: host+'room/list/condition/page',
 		datatype: "json",
 		colModel: [
-			{ label: '房间编号', name: 'ROOMNO', width: 75 },
-			{ label: '单元', name: 'DepartmentCode', width: 90 },
-			{ label: '楼层', name: 'Floor', width: 100 },
-			{ label: '房间号', name: 'RoomCode', width: 40 },
-			{ label: '使用面积', name: 'BuildingArea', width: 50},
-			{ label: '缴费面积', name: 'FeeArea', width: 70 },
-			{ label: '房间状态', name: 'RoomStatus', width: 70 }  
-			{ label: '房间类型', name: 'RoomType', width: 70 }   
+			{ label: '房间编号', name: 'roomno', width: 75 },
+			{ label: '单元', name: 'departmentCode', width: 90 },
+			{ label: '楼层', name: 'floor', width: 100 },
+			{ label: '房间号', name: 'roomCode', width: 40 },
+			{ label: '使用面积', name: 'buildingArea', width: 50},
+			{ label: '缴费面积', name: 'feeArea', width: 70 },
+			{ label: '房间状态', name: 'roomStatus', width: 70 }  
+			{ label: '房间类型', name: 'roomType', width: 70 }   
 		],
 		caption:"员工列表",
 		viewrecords: true, 

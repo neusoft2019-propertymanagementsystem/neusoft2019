@@ -7,12 +7,12 @@ $(function(){
 	var rows=10;
 	var page=1;
 	var pageCount=0;
-	var TypeNO=0; //选择的部门编号
-	//设置系统页面标题
+	var TypeNO=0; 
+	
 	$("span#mainpagetille").html("小区管理");
-	//取得部门的列表，分页模式
+	//取得小区的列表，分页模式
 	function getListInfo(){
-		//调用后台取得部门列表REST API
+		//调用后台取得小区列表
 		$.getJSON("http://localhost:8080/buildingType/list/all/page",{page:page,rows:rows},function(data){
 				//显示个数和页数
 				$("span#count").html(data.count);
@@ -21,54 +21,25 @@ $(function(){
 				//显示列表
 				$("table#buildingTypeTable tbody").html("");
 				for(var i=0;i<data.list.length;i++){
-					var tr="<tr id='"+data.list[i].no+"'><td>"+data.list[i].TYPENAME+"</td><td>"+data.list[i].TYPENAME+"</td></tr>";
+					var tr="<tr id='"+data.list[i].TYPENO+"'><td>"+data.list[i].TYPENAME+"</td></tr>";
 					$("table#buildingTypeTable tbody").append(tr);
 				}
-				//定义表格行的点击时间，取得选择的部门编号
+				//定义表格行的点击时间，取得选择的编号
 				$("table#buildingTypeTable tbody tr").on("click",function(){
-					departmentNo=$(this).attr("id");
+					TypeNONo=$(this).attr("id");
 					$("table#buildingTypeTable tbody tr").css("background-color","#FFFFFF");
 					$(this).css("background-color","#CDCD9A");
 				});
 		 });
 	}
-	/*
-	//定义分页导航链接处理事件
-	$("div#page_nav a").on("click",function(event){
-			  var action=$(this).attr("href");
-			  event.preventDefault();
-			  switch(action){
-			  	case "top":
-			  		page=1;
-			  		getListInfo();
-			  		break;
-			  	case "pre":
-			  		if(page>1){
-			  			page=page-1;
-			  			getListInfo();
-			  		}
-			  		break;
-			  	case "next":
-			  		if(page<pageCount){
-			  			page=page+1;
-			  			getListInfo();
-			  		}
-			  		break;
-			  	case "last":
-			  		page=pageCount;
-			  		getListInfo();
-			  		break;
-			  }
-		
-	});
-	*/
+
 	
 	
-	//初始调用取得分页列表数据
+	
+	
 	getListInfo();
 	//点击增加链接处理，嵌入add.html
-	$("a#BuildingTypeAddLink").off().on("click",function(event){
-				
+	$("a#BuildingTypeAddLink").off().on("click",function(event){	
 		$("div#BuildingTypeDialogArea").load("BuildingType/add.html",function(){
 			$("div#BuildingTypeDialogArea" ).dialog({
 				title:"增加小区",

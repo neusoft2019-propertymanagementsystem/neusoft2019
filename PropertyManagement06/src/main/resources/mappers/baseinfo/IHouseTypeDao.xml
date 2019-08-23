@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="TYPENAME" column="TYPENAME"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into HouseType(TYPENO,TYPENAME)
 		values (#{TYPENO},#{TYPENAME})
 	</insert>
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(HouseTypeNO), 0) from HouseType
+   select IFNULL(count(TYPENO), 0) from HouseType
   </select>
  
 </mapper>

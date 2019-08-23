@@ -9,17 +9,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="TYPENAME" column="TYPENAME"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into BuildingType(TYPENO,TYPENAME)
-		values (#{no},#{TYPENAME})
+		values (#{TYPENO},#{TYPENAME})
 	</insert>
 
 	<update id="update" flushCache="true">
-		update BuildingType set TYPENAME=#{TYPENAME} where TYPENO=#{no}
+		update BuildingType set TYPENAME=#{TYPENAME} where TYPENO=#{TYPENO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from BuildingType where TYPENO=#{no}
+	delete from BuildingType where TYPENO=#{TYPENO}
 	</delete>
 
 	<!-- 无关联查询列表 -->

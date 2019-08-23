@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="HumanCount" column="HumanCount"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="CHNO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into CustomerHome(CHNO,ReceiveDate,LiveDate,FeeStartDate,FeeEndDate,HumanCount)
 		values (#{CHNO},#{ReceiveDate},#{LiveDate},#{FeeStartDate},#{FeeEndDate},#{HumanCount})
 	</insert>
@@ -39,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(CustomerHomeNO), 0) from CustomerHome
+   select IFNULL(count(CHNO), 0) from CustomerHome
   </select>
  
 </mapper>

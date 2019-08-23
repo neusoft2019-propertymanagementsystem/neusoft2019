@@ -1,38 +1,43 @@
-/**
- * 小区管理的前端控制JS
- * 作者：刘勇超
- * 
- */
-
-
-
-(function(){
-	var rows=10;
-	var page=1;
-	var pageCount=0;
-	var AreaNo=0; //选择的部门编号
-	 
-	$("span#mainpagetille").html("小区管理");
-	
-	function getListInfo(){
-		//调用后台取得部门列表REST API
-		$.getJSON("http://10.1.53.53:8080/area/list/all/page",{page:page,rows:rows},function(data){
-				//显示个数和页数
-				$("span#count").html(data.count);
-				$("span#pagecount").html(data.page+"/"+data.pageCount);
-				pageCount=data.pageCount;
-				//显示列表
-				$("table#AreaTable tbody").html("");
-				for(var i=0;i<data.list.length;i++){
-					var tr="<tr id='"+data.list[i].no+"'><td>"+data.list[i].code+"</td><td>"+data.list[i].name+"</td></tr>";
-					$("table#AreaTable tbody").append(tr);
-				}
-				//定义表格行的点击时间，取得选择的部门编号
-				$("table#AreaTable tbody tr").on("click",function(){
-					AreaNo=$(this).attr("id");
-					$("table#AreaTable tbody tr").css("background-color","#FFFFFF");
-					$(this).css("background-color","#CDCD9A");
-				});
-		 });
-	}		
+	$(function(){
+	var employeeId=null;
+	var startJoinDate=null;
+	var endJoinDate=null;
+	var departmentNo=0;
+	var roleNo=0;
+	var sex="";
+	//设置系统页面标题
+	$("span#mainpagetille").html("员工管理");
+	//设置日期的格式和选择//显示员工列表
+	$("table#EmployeeGrid").jqGrid({
+		url: host+'employee/list/condition/page',
+		datatype: "json",
+		colModel: [
+			{ label: '账号', name: 'id', width: 75 },
+			{ label: '姓名', name: 'name', width: 90 },
+			{ label: '部门', name: 'department.name', width: 100 },
+			{ label: '性别', name: 'sex', width: 40 },
+			{ label: '年龄', name: 'age', width: 50},
+			{ label: '出生日期', name: 'birthday', width: 70 },
+			{ label: '入职日期', name: 'joinDate', width: 70 }   
+		],
+		caption:"员工列表",
+		viewrecords: true, 
+		autowidth: true,
+		height: 400,
+		rowNum: 20,
+		rowList:[10,20,30],
+		jsonReader : { 
+		      root: "list", 
+		      page: "page", 
+		      total: "pageCount", 
+		      records: "count", 
+		      repeatitems: true, 
+		      id: "id"},
+		pager: "#EmployeeGridPager",
+		multiselect:false,
+		onSelectRow:function(empid){
+			employeeId=empid;
+		}
+		
+	});
 });

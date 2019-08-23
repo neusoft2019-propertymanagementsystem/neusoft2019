@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="PCStatus" column="PCStatus"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="PCNO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into ParkCustomer(PCNO,CarCode,StartDate,EndDate,PCStatus)
 		values (#{PCNO},#{CarCode},#{StartDate},#{EndDate},#{PCStatus})
 	</insert>
@@ -37,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(ParkCustomerNO), 0) from ParkCustomer
+   select IFNULL(count(PCNO), 0) from ParkCustomer
   </select>
  
 </mapper>

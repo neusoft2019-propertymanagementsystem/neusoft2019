@@ -11,21 +11,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="Unit" column="Unit"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_ParkType.nextval from dual
-			</selectKey>
+	<insert id ="create"  flushCache="true">
 		insert into ParkType(TYPENO,TYPENAME,UnitPrice,Unit)
-		values (#{no},#{TYPENAME},#{UnitPrice},#{Unit})
+		values (#{TYPENO},#{TYPENAME},#{UnitPrice},#{Unit})
 	</insert>
 
 	<update id="update" flushCache="true">
 		update ParkType set TYPENAME=#{TYPENAME},UnitPrice=#{UnitPrice},Unit=#{Unit}
-		where TYPENO=#{no}
+		where TYPENO=#{TYPENO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from ParkType where TYPENO=#{no}
+	delete from ParkType where TYPENO=#{TYPENO}
 	</delete>
 	
 	<!-- 无关联查询列表 -->
@@ -40,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(ParkTypeNO), 0) from ParkType
+   select IFNULL(count(TYPENO), 0) from ParkType
   </select>
  
 </mapper>

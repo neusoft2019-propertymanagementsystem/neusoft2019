@@ -19,7 +19,7 @@ public class BuildingController {
 	//取得列表，带分页
 	@RequestMapping(value="/list/all/page")
 	public ResultMessage<BuildingModel> getListByAllWitPage(@RequestParam(required = false,defaultValue ="10") int rows,@RequestParam(required = false,defaultValue = "1") int page) throws Exception{
-		ResultMessage<BuildingModel> result = new ResultMessage<BuildingModel>("OK","取得小区列表分页模式成功");
+		ResultMessage<BuildingModel> result = new ResultMessage<BuildingModel>("OK","取得列表分页模式成功");
 		result.setCount(buildingservice.getCountByAll());
 		result.setPageCount(buildingservice.getPagaCountByAll(rows));
 		result.setList(buildingservice.getListByAllWithPage(rows, page));
@@ -31,19 +31,19 @@ public class BuildingController {
 	@RequestMapping("/add")
 	public ResultMessage<BuildingModel> add(BuildingModel building) throws Exception {
 		buildingservice.addBuilding(building);
-		return new ResultMessage<BuildingModel>("OK","增加部门成功");
+		return new ResultMessage<BuildingModel>("OK","增加成功");
 	}
 	//修改
 	@PostMapping("/modify")
 	public ResultMessage<BuildingModel> modify(BuildingModel building) throws Exception {
 		buildingservice.modifyBuilding(building);
-		return new ResultMessage<BuildingModel>("OK","修改部门成功");
+		return new ResultMessage<BuildingModel>("OK","修改成功");
 	}
 	//删除
 	@PostMapping("/delete")
 	public ResultMessage<BuildingModel> delete(BuildingModel building) throws Exception {
 		buildingservice.deleteBuilding(building);
-		return new ResultMessage<BuildingModel>("OK","删除部门成功");
+		return new ResultMessage<BuildingModel>("OK","删除成功");
 	}
 
 }

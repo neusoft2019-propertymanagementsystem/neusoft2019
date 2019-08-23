@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neusoft.wuyemis.baseinfo.model.AreaModel;
@@ -30,19 +29,19 @@ public class AreaController {
 	@RequestMapping("/add")
 	public ResultMessage<AreaModel> add(AreaModel area) throws Exception {
 		areaservice.addArea(area);
-		return new ResultMessage<AreaModel>("OK","增加部门成功");
+		return new ResultMessage<AreaModel>("OK","增加成功");
 	}
 	//修改部门
 	@PostMapping("/modify")
 	public ResultMessage<AreaModel> modify(AreaModel area) throws Exception {
 		areaservice.modifyArea(area);
-		return new ResultMessage<AreaModel>("OK","修改部门成功");
+		return new ResultMessage<AreaModel>("OK","修改成功");
 	}
 	//删除部门
 	@PostMapping("/delete")
 	public ResultMessage<AreaModel> delete(AreaModel area) throws Exception {
 		areaservice.deleteArea(area);
-		return new ResultMessage<AreaModel>("OK","删除部门成功");
+		return new ResultMessage<AreaModel>("OK","删除成功");
 	}
 
 	

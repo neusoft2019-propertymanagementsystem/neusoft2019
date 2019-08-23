@@ -21,7 +21,7 @@ public class CustomerModel implements Serializable{
 	private String Fax =null;		//传真
 	private String QQ = null;		//QQ
 	private String WeiXin = null;		//微信
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date FeeStartDate = null;		//收费开始日期
 	private Date FeeEndDate = null;		//收费截止日期
 	private String CStatus = null;		//客户状态

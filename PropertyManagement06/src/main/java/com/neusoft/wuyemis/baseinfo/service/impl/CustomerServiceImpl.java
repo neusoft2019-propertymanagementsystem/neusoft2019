@@ -14,6 +14,7 @@ import com.neusoft.wuyemis.baseinfo.service.ICustomerService;
 public class CustomerServiceImpl implements ICustomerService {
 	@Autowired
 	private ICustomerDao customerdao = null;
+	
 	@Override
 	public void addCustomer(CustomerModel customerModel) throws Exception {
 		customerdao.insert(customerModel);
@@ -35,17 +36,21 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<CustomerModel> selectListByAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public int getCountByAll() throws Exception {
+		
 		return customerdao.selectCountByAll();
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public int getPagaCountByAll(int rows) throws Exception {
 		int pageCount=0;
 		int count=this.getCountByAll();
@@ -59,6 +64,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<CustomerModel> getListByAllWithPage(int rows, int page) throws Exception {
 		return customerdao.selectListByAllWithPage(rows*(page-1), rows);
 	}

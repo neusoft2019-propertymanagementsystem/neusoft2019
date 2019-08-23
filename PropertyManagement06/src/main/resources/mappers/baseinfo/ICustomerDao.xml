@@ -20,18 +20,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="CStatus" column="CStatus"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="CustomerNO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into Customer(CustomerNO,CCODE,CNAME,Contact,CardCode,Mobile,Tel,Fax,QQ,WeiXin,FeeStartDate,FeeEndDate,CStatus)
 		values (#{CustomerNO},#{CCODE},#{CNAME},#{Contact},#{CardCode},#{Mobile},#{Tel},#{Fax},#{QQ},#{WeiXin},#{FeeStartDate},#{FeeEndDate},#{CStatus})
 	</insert>
 
 	<update id="update" flushCache="true">
 		update Customer set CCODE=#{CCODE},CNAME=#{CNAME},Contact=#{Contact},CardCode=#{CardCode},Mobile=#{Mobile} 
-		Tel=#{Tel},Fax=#{Fax},QQ=#{QQ},WeiXin=#{WeiXin},FeeStartDate=#{FeeStartDate},FeeEndDate=#{FeeEndDate},CStatus=#{CStatus}where CustomerNO=#{no}
+		Tel=#{Tel},Fax=#{Fax},QQ=#{QQ},WeiXin=#{WeiXin},FeeStartDate=#{FeeStartDate},FeeEndDate=#{FeeEndDate},CStatus=#{CStatus}where CustomerNO=#{CustomerNO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from Customer where CustomerNO=#{no}
+	delete from Customer where CustomerNO=#{CustomerNO}
 	</delete>
 	
 	<!-- 无关联查询列表 -->

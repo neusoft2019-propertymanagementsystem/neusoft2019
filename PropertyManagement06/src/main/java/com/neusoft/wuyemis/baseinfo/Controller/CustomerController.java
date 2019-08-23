@@ -14,10 +14,11 @@ import com.neusoft.wuyemis.message.ResultMessage;
 public class CustomerController {
 	@Autowired
 	private ICustomerService customerservice = null;
-	//取得小区列表，带分页
-	@RequestMapping(value="/list/all/page")
+	/*
+	//取得列表，带分页
+	@RequestMapping(value="/list/all")
 	public ResultMessage<CustomerModel> getListByAllWitPage(@RequestParam(required = false,defaultValue ="10") int rows,@RequestParam(required = false,defaultValue = "1") int page) throws Exception{
-		ResultMessage<CustomerModel> result = new ResultMessage<CustomerModel>("OK","取得小区列表分页模式成功");
+		ResultMessage<CustomerModel> result = new ResultMessage<CustomerModel>("OK","取得列表分页模式成功");
 		result.setCount(customerservice.getCountByAll());
 		result.setPageCount(customerservice.getPagaCountByAll(rows));
 		result.setList(customerservice.getListByAllWithPage(rows, page));
@@ -25,23 +26,28 @@ public class CustomerController {
 		result.setRows(rows);
 		return result;
 	}
-	//增加小区
+	
+	
+	//增加
 	@RequestMapping("/add")
 	public ResultMessage<CustomerModel> add(CustomerModel customer) throws Exception {
 		customerservice.addCustomer(customer);
-		return new ResultMessage<CustomerModel>("OK","增加部门成功");
+		return new ResultMessage<CustomerModel>("OK","增加成功");
 	}
-	//修改部门
+	
+	//修改
 	@PostMapping("/modify")
 	public ResultMessage<CustomerModel> modify(CustomerModel customer) throws Exception {
 		customerservice.modifyCustomer(customer);
-		return new ResultMessage<CustomerModel>("OK","修改部门成功");
+		return new ResultMessage<CustomerModel>("OK","修改成功");
 	}
-	//删除部门
+	
+	//删除
 	@PostMapping("/delete")
 	public ResultMessage<CustomerModel> delete(CustomerModel customer) throws Exception {
 		customerservice.deleteCustomer(customer);
-		return new ResultMessage<CustomerModel>("OK","删除部门成功");
+		return new ResultMessage<CustomerModel>("OK","删除成功");
 	}
-
+	
+*/
 }

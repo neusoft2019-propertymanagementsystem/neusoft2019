@@ -15,21 +15,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="RoomType" column="RoomType"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="ROOMNO" useGeneratedKeys="true" flushCache="true">
-			<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			select SQ_Room.nextval from dual
-			</selectKey>
+	<insert id ="create"  flushCache="true">
 		insert into Room(ROOMNO,DepartmentCode,Floor,RoomCode,BuildingArea,FeeArea,RoomStatus,RoomType)
-		values (#{no},#{DepartmentCode},#{Floor},#{RoomCode},#{BuildingArea},#{FeeArea},#{RoomStatus},#{RoomType})
+		values (#{ROOMNO},#{DepartmentCode},#{Floor},#{RoomCode},#{BuildingArea},#{FeeArea},#{RoomStatus},#{RoomType})
 	</insert>
 
 	<update id="update" flushCache="true">
 		update Room set DepartmentCode=#{DepartmentCode},Floor=#{Floor},RoomCode=#{RoomCode},BuildingArea=#{BuildingArea},FeeArea=#{FeeArea},RoomStatus=#{RoomStatus},RoomType=#{RoomType} 
-		where ROOMNO=#{no}
+		where ROOMNO=#{ROOMNO}
 	</update>
 
 	<delete id="delete" flushCache="true">
-	delete from Room where ROOMNO=#{no}
+	delete from Room where ROOMNO=#{ROOMNO}
 	</delete>
 	
 	<!-- 无关联查询列表 -->
@@ -44,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(RoomNO), 0) from Room
+   select IFNULL(count(ROOMNO), 0) from Room
   </select>
  
 </mapper>

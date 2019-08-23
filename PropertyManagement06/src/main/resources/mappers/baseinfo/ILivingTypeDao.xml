@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="TYPENAME" column="TYPENAME"/>
 	</resultMap>
 	
-	<insert id ="create" keyProperty="no" keyColumn="TYPENO" useGeneratedKeys="true" flushCache="true">
+	<insert id ="create"  flushCache="true">
 		insert into LivingType(TYPENO,TYPENAME)
 		values (#{TYPENO},#{TYPENAME})
 	</insert>
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
   <!-- 取得总个数 -->
   <select id="selectCountByAll" resultType="int">
-   select IFNULL(count(LivingTypeNO), 0) from LivingType
+   select IFNULL(count(TypeNO), 0) from LivingType
   </select>
  
 </mapper>

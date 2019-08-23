@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.neusoft.wuyemis.admin.dao.ISystemModuleDao;
+import com.neusoft.wuyemis.admin.dao.IUserInfoDao;
 import com.neusoft.wuyemis.admin.model.SystemModuleModel;
 import com.neusoft.wuyemis.admin.service.ISystemModuleService;
-@Service
-@Transactional
+@Service("ISystemModuleService")
+
 public class SystemModuleServiceImpl implements ISystemModuleService {
+	
 	@Autowired
 	private ISystemModuleDao systemModuleDao=null; 
+	@Autowired
+	private IUserInfoDao  userInfoDao=null;
 	
 	@Override
 	public void create(SystemModuleModel systemModuleModel) throws Exception {

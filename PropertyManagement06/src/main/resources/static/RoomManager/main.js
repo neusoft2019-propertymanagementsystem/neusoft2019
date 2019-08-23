@@ -1,271 +1,263 @@
 /**
- * 员工前端主管理JS
- * 模块：HR
- * 业务对象：员工
- * 作者:吕海东
+ * 小区管理前端控制JS
+ * 作者：刘勇超
  * 
  */
 $(function(){
-	var employeeId=null;
-	var startJoinDate=null;
-	var endJoinDate=null;
-	var ROOMNO=0;
-	//设置系统页面标题
-	$("span#mainpagetille").html("员工管理");
-	//设置日期的格式和选择
+	var rows=10;
+	var page=1;
+	var pageCount=0;
+	var AreaNO=0; 
 	
-	//显示员工列表
-	$("table#EmployeeGrid").jqGrid({
-		url: host+'room/list/condition/page',
-		datatype: "json",
-		colModel: [
-			{ label: '房间编号', name: 'roomno', width: 75 },
-			{ label: '单元', name: 'departmentCode', width: 90 },
-			{ label: '楼层', name: 'floor', width: 100 },
-			{ label: '房间号', name: 'roomCode', width: 40 },
-			{ label: '使用面积', name: 'buildingArea', width: 50},
-			{ label: '缴费面积', name: 'feeArea', width: 70 },
-			{ label: '房间状态', name: 'roomStatus', width: 70 }  
-			{ label: '房间类型', name: 'roomType', width: 70 }   
-		],
-		caption:"员工列表",
-		viewrecords: true, 
-		autowidth: true,
-		height: 400,
-		rowNum: 20,
-		rowList:[10,20,30],
-		jsonReader : { 
-		      root: "list", 
-		      page: "page", 
-		      total: "pageCount", 
-		      records: "count", 
-		      repeatitems: true, 
-		      id: "ROOMNO"},
-		pager: "#EmployeeGridPager",
-		multiselect:false,
-		onSelectRow:function(empid){
-			employeeId=empid;
-		}
-		
-	});
+	$("span#mainpagetille").html("小区管理");
+	//取得小区的列表，分页模式
+	function getListInfo(){
+		//调用后台取得小区列表
+		$.getJSON("http://localhost:8080/room/list/all/page",{page:page,rows:rows},function(data){
+				//显示个数和页数
+				$("span#count").html(data.count);
+				$("span#pagecount").html(data.page+"/"+data.pageCount);
+				pageCount=data.pageCount;
+				//显示列表
+				$("table#buildingTypeTable tbody").html("");
+				for(var i=0;i<data.list.length;i++){
+					var tr="<tr id='"+data.list[i].roomno+"'><td>"+data.list[i].roomType+"</td><td>"+data.list[i].roomCode+"</td><td>"+data.list[i].feeArea+"</td><td>"+data.list[i].roomStatus+"</td></tr>";
+					$("table#buildingTypeTable tbody").append(tr);
+				}
+				//定义表格行的点击时间，取得选择的编号
+				$("table#buildingTypeTable tbody tr").on("click",function(){
+					AreaNO=$(this).attr("id");
+					$("table#buildingTypeTable tbody tr").css("background-color","#FFFFFF");
+					$(this).css("background-color","#CDCD9A");
+				});
+		 });
+	}
 	
-	//===========================增加员工处理================================================
-	$("a#EmployeeAddLink").off().on("click",function(){
-		$("div#EmployeeDialog").load("employee/add.html",function(){
-			//取得部门列表，并填充部门下拉框
-			$.getJSON(host+"department/list/all",function(departmentList){
-				if(departmentList){
-					$.each(departmentList,function(index,dm){
-						$("select[name='department.no']").append("<option value='"+dm.no+"'>"+dm.name+"</option>");
-					});
-				}
+	getListInfo();
+	/*
+	//点击增加链接处理，嵌入add.html
+	$("a#BuildingTypeAddLink").off().on("click",function(event){	
+		$("div#BuildingTypeDialogArea").load("AreaManager/add.html",function(){
+			$("div#BuildingTypeDialogArea" ).dialog({
+				title:"增加小区",
+				width:600
 			});
-			//取得角色列表，生成角色选择下拉框
-			$.getJSON(host+"role/list/all",function(roleList){
-				if(roleList){
-					$.each(roleList,function(index,rm){
-						$("div#RoleListForEMP").append("<input type='checkbox' name='employeeRoles' value='"+rm.no+"' />"+rm.name);
-					});
-				}
-			});
-			//验证员工提交数据
-			$("form#EmployeeAddForm").validate({
+			//验证数据
+			$("form#BuildingTypeAddForm" ).validate({
 				  rules: {
-				    id: {
-				      required: true,
-				      remote: host+"employee/checkidexist"
-				      
+					AREANAME: {
+				      required: true
 				    },
-				    name:{
+				    AAddress:{
 				    	required: true
-				    },
-				    age:{
-				    	number: true,
-				    	min:18,
-				    	max:60,
-				    	range: [18, 60]
-				    },
-				    mail:{
-				    	required:true,
-				    	email: true
-				    },
-				    mobile:{
-				    	required:true,
-				    	mobile:true
-				    	
+				    }
+				    Developer:{
+				    	required: true
+				    }
+				    TotalBuidingArea:{
+				    	required: true
+				    }
+				    TotalUseArea:{
+				    	required: true
+				    }
+				    TotalPackArea:{
+				    	required: true
+				    }
+				    TotalHome:{
+				    	required: true
+				    }
+				    TotalHouse:{
+				    	required: true
+				    }
+				    TotalPack:{
+				    	required: true
 				    }
 				  },
 				  messages:{
-					id: {
-					      required: "账号为空",
-					      remote:"账号已经存在"
+					    AREANAME: {
+					      required: true
 					    },
-					name:{
-					    	required:"部门名称为空"
-					},
-					age:{
-						number: "年龄必须是数值",
-				    	range:"年龄需要在18和60之间"
-					}
-				 }
+					    AAddress:{
+					    	required: true
+					    }
+					    Developer:{
+					    	required: true
+					    }
+					    TotalBuidingArea:{
+					    	required: true
+					    }
+					    TotalUseArea:{
+					    	required: true
+					    }
+					    TotalPackArea:{
+					    	required: true
+					    }
+					    TotalHome:{
+					    	required: true
+					    }
+					    TotalHouse:{
+					    	required: true
+					    }
+					    TotalPack:{
+					    	required: true
+					    }
+				 } 
 			});
-			//拦截增加提交表单
-			$("form#EmployeeAddForm").ajaxForm(function(result){
+			//拦截增加表单提交
+			$("form#BuildingTypeAddForm").ajaxForm(function(result){
 				if(result.status=="OK"){
-					reloadEmployeeList();//更新员工列表
+					getListInfo(); 
 				}
-				//alert(result.message);
-				//BootstrapDialog.alert(result.message);
+
 				BootstrapDialog.show({
-		            title: '员工操作信息',
+		            title: '小区操作信息',
 		            message:result.message
 		        });
-				$("div#EmployeeDialog").dialog( "close" );
-				$("div#EmployeeDialog").dialog( "destroy" );
-				$("div#EmployeeDialog").html("");
+				$("div#BuildingTypeDialogArea" ).dialog( "close" );
+				$("div#BuildingTypeDialogArea" ).dialog( "destroy" );
+				$("div#BuildingTypeDialogArea").html("");
 				
 			});
-			
-			
-			$("div#EmployeeDialog").dialog({
-				title:"员工增加",
-				width:950
+			//点击取消按钮处理
+			$("input[value='取消']").on("click",function(){
+				$( "div#BuildingTypeDialogArea" ).dialog( "close" );
+				$( "div#BuildingTypeDialogArea" ).dialog( "destroy" );
+				$("div#BuildingTypeDialogArea").html("");
 			});
-			//点击取消按钮，管理弹出窗口
-			$("input[value='取消']").off().on("click",function(){
-				$("div#EmployeeDialog").dialog("close");
-				$("div#EmployeeDialog").dialog("destroy")
-				$("div#EmployeeDialog").html("");
-			});
-			
-			
 		});
 		
 	});
 	
-	//===============================修改员工处理===============================================================
-	$("a#EmployeeModifyLink").off().on("click",function(){
-		if(employeeId==null){
+	*/
+	
+	
+	
+	//点击修改按钮事件处理
+	$("a#BuildingTypeModifyLink").off().on("click",function(event){
+		if(departmentNo==0){
 			BootstrapDialog.show({
-	            title: '员工操作信息',
-	            message:"请选择要修改的员工",
-	            buttons: [{
-	                label: '确定',
-	                action: function(dialog) {
-	                    dialog.close();
-	                }
-	            }]
+	            title: '部门操作信息',
+	            message:"请选择要修改的部门"
 	        });
 		}
-		else{
-			$("div#EmployeeDialog").load("employee/modify.html",function(){
-				//取得指定的员工信息
-				$.getJSON(host+"/employee/get",{id:employeeId},function(em){
-					if(em){
-						$("span#employeeId").html(employeeId);
-						$("span#employeeName").html(em.name);
-						$("span#employeeSex").html(em.sex);
-						$("span#empage").html(em.age);
-						$("span#empsalary").html(em.salary);
-						$("span#empbirthday").html(em.birthday);
-						$("span#empjoindate").html(em.joinDate);
-						$("span#departmentName").html(em.department.name);
-						if(em.roles){
-							$.each(em.roles,function(index,roleModel){
-								$("span#emproles").append(roleModel.name+"  ");
-							});
-						}
-						if(em.photoFileName!=null&&em.photoFileName!=""){
-							$("span#empphoto").html("<img src='employee/downphoto?id="+employeeId+"' />");
-						}
-						else{
-							$("span#empphoto").html("无照片");
-						}
-						
-					}
-				});
-				$("div#EmployeeDialog").dialog({
-					title:"员工修改",
-					width:800
-				});
-				//点击取消按钮，管理弹出窗口
-				$("input[value='取消']").off().on("click",function(){
-					$("div#EmployeeDialog").dialog("close");
-					$("div#EmployeeDialog").dialog("destroy")
-					$("div#EmployeeDialog").html("");
-				});
-				
-				
-			});
-		}
-	});
-	//===============================删除员工处理==============================================================
-	
-	
-	
-	//================================查看员工处理=============================================================
-	$("a#EmployeeViewLink").off().on("click",function(){
-		if(employeeId==null){
-			BootstrapDialog.show({
-	            title: '员工操作信息',
-	            message:"请选择要查看的员工",
-	            buttons: [{
-	                label: '确定',
-	                action: function(dialog) {
-	                    dialog.close();
-	                }
-	            }]
-	        });
-		}
-		else{
-			$("div#EmployeeDialog").load("employee/view.html",function(){
-				//取得指定的员工信息
-				$.getJSON(host+"/employee/get",{id:employeeId},function(em){
-					if(em){
-						$("span#employeeId").html(employeeId);
-						$("span#employeeName").html(em.name);
-						$("span#employeeSex").html(em.sex);
-						$("span#empage").html(em.age);
-						$("span#empsalary").html(em.salary);
-						$("span#empbirthday").html(em.birthday);
-						$("span#empjoindate").html(em.joinDate);
-						$("span#departmentName").html(em.department.name);
-						if(em.roles){
-							$.each(em.roles,function(index,roleModel){
-								$("span#emproles").append(roleModel.name+"  ");
-							});
-						}
-						if(em.photoFileName!=null&&em.photoFileName!=""){
-							$("span#empphoto").html("<img src='employee/downphoto?id="+employeeId+"' />");
-						}
-						else{
-							$("span#empphoto").html("无照片");
-						}
+		else {
+			$("div#BuildingTypeDialogArea").load("department/modify.html",function(){
+				//取得选择的部门
+				$.getJSON("department/get",{no:departmentNo},function(data){
+					if(data.status=="OK"){
+						$("input[name='no']").val(departmentNo);
+						$("input[name='code']").val(data.model.code);
+						$("input[name='name']").val(data.model.name);
 						
 					}
 				});
 				
-				
-				$("div#EmployeeDialog").dialog({
-					title:"员工详细",
-					width:800
+				$("div#BuildingTypeDialogArea" ).dialog({
+					title:"部门修改",
+					width:600
 				});
-				//点击取消按钮，管理弹出窗口
-				$("input[value='关闭']").off().on("click",function(){
-					$("div#EmployeeDialog").dialog("close");
-					$("div#EmployeeDialog").dialog("destroy")
-					$("div#EmployeeDialog").html("");
+				//拦截表单提交
+				$("form#BuildingTypeModifyForm").ajaxForm(function(result){
+					if(result.status=="OK"){
+						getListInfo(); 
+					}
+					//alert(result.message);
+					//BootstrapDialog.alert(result.message);
+					BootstrapDialog.show({
+			            title: '部门操作信息',
+			            message:result.message
+			        });
+					$("div#BuildingTypeDialogArea" ).dialog( "close" );
+					$("div#BuildingTypeDialogArea" ).dialog( "destroy" );
+					$("div#BuildingTypeDialogArea").html("");
+					
 				});
 				
 				
+				//点击取消按钮处理
+				$("input[value='取消']").on("click",function(){
+					$( "div#BuildingTypeDialogArea" ).dialog( "close" );
+					$( "div#BuildingTypeDialogArea" ).dialog( "destroy" );
+					$("div#BuildingTypeDialogArea").html("");
+				});
 			});
+			
 		}
-		
 		
 		
 	});
 	
-	
-	
+	//点击删除按钮事件处理
+	$("a#DepartmentDelteLink").off().on("click",function(event){
+		
+		if(departmentNo==0){
+			BootstrapDialog.show({
+	            title: '部门操作信息',
+	            message:"请选择要删除的部门"
+	        });
+		}
+		else {
+			//先检查此部门能否被删除
+			$.getJSON("department/checkDelete",{no:departmentNo},function(data){
+				if(data.status!="OK"){
+					BootstrapDialog.show({
+			            title: '部门操作信息',
+			            message:data.message
+			        });
+				}
+				else{
+					BootstrapDialog.confirm('确认删除此部门么?', function(result){
+			            if(result) {
+			                $.post("department/delete",{no:departmentNo},function(result){
+			                	if(result.status=="OK"){
+									getListInfo(); 
+								}
+								BootstrapDialog.show({
+						            title: '部门操作信息',
+						            message:result.message
+						        });
+			                });
+			            }
+			        });
+				}
+			});
+			
+		}
+		
+	});
+	//点击查看详细按钮事件处理
+	$("a#DepartmentViewLink").off().on("click",function(event){
+		
+		if(departmentNo==0){
+			BootstrapDialog.show({
+	            title: '部门操作信息',
+	            message:"请选择要查看的部门"
+	        });
+		}
+		else{
+			$("div#DepartmentDialogArea").load("department/view.html",function(){
+				//取得选择的部门
+				$.getJSON("department/get",{no:departmentNo},function(data){
+					if(data.status=="OK"){
+						$("span#departmentCode").html(data.model.code);
+						$("span#departmentName").html(data.model.name);
+						
+					}
+				});
+				//弹出Dialog
+				$("div#DepartmentDialogArea" ).dialog({
+					title:"部门详细",
+					width:600
+				});
+				//点击取消按钮处理
+				$("input[value='返回']").on("click",function(){
+					$( "div#DepartmentDialogArea" ).dialog( "close" );
+					$( "div#DepartmentDialogArea" ).dialog( "destroy" );
+					$("div#DepartmentDialogArea").html("");
+				});
+			});
+			
+		}
+	});
 	
 });

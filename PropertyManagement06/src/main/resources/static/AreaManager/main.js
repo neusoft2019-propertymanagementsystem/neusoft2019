@@ -34,6 +34,7 @@ $(function(){
 	}
 	
 	getListInfo();
+	/*
 	//点击增加链接处理，嵌入add.html
 	$("a#BuildingTypeAddLink").off().on("click",function(event){	
 		$("div#BuildingTypeDialogArea").load("AreaManager/add.html",function(){
@@ -44,7 +45,7 @@ $(function(){
 			//验证数据
 			$("form#BuildingTypeAddForm" ).validate({
 				  rules: {
-					 AREANAME: {
+					AREANAME: {
 				      required: true
 				    },
 				    AAddress:{
@@ -73,11 +74,32 @@ $(function(){
 				    }
 				  },
 				  messages:{
-					  TYPENO: {
-					      required: "部门编码为空"
+					    AREANAME: {
+					      required: true
 					    },
-					    TYPENAME:{
-					    	required:"部门名称为空"
+					    AAddress:{
+					    	required: true
+					    }
+					    Developer:{
+					    	required: true
+					    }
+					    TotalBuidingArea:{
+					    	required: true
+					    }
+					    TotalUseArea:{
+					    	required: true
+					    }
+					    TotalPackArea:{
+					    	required: true
+					    }
+					    TotalHome:{
+					    	required: true
+					    }
+					    TotalHouse:{
+					    	required: true
+					    }
+					    TotalPack:{
+					    	required: true
 					    }
 				 } 
 			});
@@ -86,8 +108,7 @@ $(function(){
 				if(result.status=="OK"){
 					getListInfo(); 
 				}
-				//alert(result.message);
-				//BootstrapDialog.alert(result.message);
+
 				BootstrapDialog.show({
 		            title: '小区操作信息',
 		            message:result.message
@@ -106,6 +127,8 @@ $(function(){
 		});
 		
 	});
+	
+	*/
 	
 	
 	

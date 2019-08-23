@@ -7,13 +7,13 @@ $(function(){
 	var rows=10;
 	var page=1;
 	var pageCount=0;
-	var AreaNO=0; 
+	var ParkNO=0; 
 	
 	$("span#mainpagetille").html("小区管理");
 	//取得小区的列表，分页模式
 	function getListInfo(){
 		//调用后台取得小区列表
-		$.getJSON("http://localhost:8080/area/list/all/page",{page:page,rows:rows},function(data){
+		$.getJSON("http://localhost:8080/park/list/all/page",{page:page,rows:rows},function(data){
 				//显示个数和页数
 				$("span#count").html(data.count);
 				$("span#pagecount").html(data.page+"/"+data.pageCount);
@@ -21,22 +21,25 @@ $(function(){
 				//显示列表
 				$("table#buildingTypeTable tbody").html("");
 				for(var i=0;i<data.list.length;i++){
-					var tr="<tr id='"+data.list[i].areano+"'><td>"+data.list[i].developer+"</td><td>"+data.list[i].totalHouse+"</td><td>"+data.list[i].buildings+"</td><td>"+data.list[i].totalPack+"</td><td>"+data.list[i].areaname+"</td><td>"+data.list[i].totalUseArea+"</td><td>"+data.list[i].totalHome+"</td><td>"+data.list[i].aaddress+"</td><td>"+data.list[i].ttotalPackArea+"</td></tr>";
+					var tr="<tr id='"+data.list[i].parkNO+"'><td>"+data.list[i].parkCode+"</td><td>"+data.list[i].location+"</td><td>"+data.list[i].area+"</td>" +
+							"<td>"+data.list[i].parkStatus+"</td><td>"+data.list[i].rentprice+"</td><td>"+data.list[i].rentUnit+"</td><td>"+data.list[i].feeStatus+"</td></tr>";
 					$("table#buildingTypeTable tbody").append(tr);
 				}
 				//定义表格行的点击时间，取得选择的编号
 				$("table#buildingTypeTable tbody tr").on("click",function(){
-					AreaNO=$(this).attr("id");
+					ParkNO=$(this).attr("id");
 					$("table#buildingTypeTable tbody tr").css("background-color","#FFFFFF");
 					$(this).css("background-color","#CDCD9A");
 				});
 		 });
 	}
+
+	
 	
 	getListInfo();
 	//点击增加链接处理，嵌入add.html
 	$("a#BuildingTypeAddLink").off().on("click",function(event){	
-		$("div#BuildingTypeDialogArea").load("AreaManager/add.html",function(){
+		$("div#BuildingTypeDialogArea").load("BuildingType/add.html",function(){
 			$("div#BuildingTypeDialogArea" ).dialog({
 				title:"增加小区",
 				width:600

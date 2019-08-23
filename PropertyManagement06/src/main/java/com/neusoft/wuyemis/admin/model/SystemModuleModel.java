@@ -8,8 +8,8 @@ import lombok.Data;
 @Alias("SystemModule")
 @Data
 public class SystemModuleModel {
-	private int mno = 0;		//模块编号
-	private String mname = null;		//模块名称
+	private int MNO = 0;		//模块编号
+	private String MNAME = null;		//模块名称
 	
 	
 	

@@ -8,8 +8,8 @@ import lombok.Data;
 @Alias("SystemFunctionUser")
 @Data
 public class SystemFunctionUserModel {
-	private int funNo = 0;		//功能号
-	private String userId = null;		//操作员账号
+	private int FunNo = 0;		//功能号
+	private String UserID = null;		//操作员账号
 	
 	
 

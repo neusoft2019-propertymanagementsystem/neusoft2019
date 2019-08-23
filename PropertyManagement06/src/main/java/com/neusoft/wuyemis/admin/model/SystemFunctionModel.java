@@ -8,11 +8,11 @@ import lombok.Data;
 @Alias("SystemFunction")
 @Data
 public class SystemFunctionModel {
-	private int funNo = 0;		//功能编号
-	private int mno = 0;		//模块编号
-	private String funName = null;		//功能名称
-	private String funUrl = null;		//URL地址
-	private int leveNo = 0;		//功能级别号
+	private int FUNNO = 0;		//功能编号
+	private int MNO = 0;		//模块编号
+	private String FUNNAME = null;		//功能名称
+	private String FUNURL = null;		//URL地址
+	private int LeveNo = 0;		//功能级别号
 	
 	
 }

@@ -6,73 +6,61 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-import com.neusoft.wuyemis.admin.dao.IUserInfoDao;
+import com.neusoft.wuyemis.admin.mapper.IUserInfoMapper;
 import com.neusoft.wuyemis.admin.model.UserInfoModel;
-import com.neusoft.wuyemis.admin.service.IUserInfoService;
-/*
- * 模块：admin
- * UserInfo的业务实现类
- * @Author: 张云强
- */
+
 @Service
-@Transactional
-public class UserInfoServiceImpl implements IUserInfoService {
-    
-	//取得UserInfo的Dao接口对象
-	@Autowired
-	private IUserInfoDao  userInfoDao=null;
+@Transactional(rollbackFor = Exception.class)
+public class UserInfoServiceImpl implements IUserInfoMapper {
 	
+	@Autowired
+	private IUserInfoMapper userInfoMapper=null;
 	@Override
-	public void register(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.create(userinfoModel);
+	public void add(UserInfoModel userinfo) throws Exception {
+		userInfoMapper.add(userinfo);
 
 	}
 
 	@Override
-	public void modify(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.update(userinfoModel);
+	public void modify(UserInfoModel userinfo) throws Exception {
+	    
 
 	}
 
 	@Override
-	public void changePassword(String idString, String password) throws Exception {
-		
+	public void delete(UserInfoModel userinfo) throws Exception {
+		userInfoMapper.delete(userinfo);
+
 	}
 
 	@Override
-	public void changeRole(String id, String role) throws Exception {
+	public UserInfoModel getByNo(int no) throws Exception {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public boolean validate(String id, String password) throws Exception {
+	public List<UserInfoModel> getListByAll() throws Exception {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	@Override
-	public void active(String id) throws Exception {
+	public List<UserInfoModel> getListByAllWithPage(int rows, int page) throws Exception {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void delete(UserInfoModel userinfoModel) throws Exception {
-		userInfoDao.delete(userinfoModel);
-	}
-
-	@Override
-	public List<UserInfoModel> selsetListByAll() throws Exception {
+	public int getCountByAll() throws Exception {
 		
-		return userInfoDao.selectListByAll();
+		return userInfoMapper.getCountByAll() ;
 	}
 
 	@Override
-	public UserInfoModel getById(String id) throws Exception {
-		
-		return userInfoDao.selectListById(id);
+	public int getPagaCountByAll(int rows) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

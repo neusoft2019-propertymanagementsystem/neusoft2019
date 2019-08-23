@@ -18,11 +18,7 @@ public interface IUserInfoService {
 	public void changePassword(String idString ,String password) throws Exception;
 	//修改角色
 	public void changeRole(String id,String role) throws Exception;
-    //验证用户合法性
-	public  boolean validate(String id,String password) throws Exception;
-	//激活用户
-	public void active(String id) throws Exception;
-	//
+    //删除
 	public void delete(UserInfoModel userinfoModel) throws Exception;
 	//取列表
 	public List<UserInfoModel> selsetListByAll()throws Exception;

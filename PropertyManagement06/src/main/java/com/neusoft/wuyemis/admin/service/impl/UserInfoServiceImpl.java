@@ -15,11 +15,11 @@ import com.neusoft.wuyemis.admin.service.IUserInfoService;
  * UserInfo的业务实现类
  * @Author: 张云强
  */
-@Service
-@Transactional
+@Service("IUserInfoService")
+
 public class UserInfoServiceImpl implements IUserInfoService {
     
-	//取得UserInfo的Dao接口对象
+
 	@Autowired
 	private IUserInfoDao  userInfoDao=null;
 	
@@ -46,19 +46,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
 
 	}
 
-	@Override
-	public boolean validate(String id, String password) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void active(String id) throws Exception {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
+   @Override
 	public void delete(UserInfoModel userinfoModel) throws Exception {
 		userInfoDao.delete(userinfoModel);
 	}

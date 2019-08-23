@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.neusoft.wuyemis.admin.dao.ISystemFunctionUserDao;
 import com.neusoft.wuyemis.admin.model.SystemFunctionUserModel;
 import com.neusoft.wuyemis.admin.service.ISystemFuntionUserService;
-@Service
-@Transactional
+
+@Service("ISystemFuntionUserService")
 
 public class SystemFuntionUserServiceImpl implements ISystemFuntionUserService {
 	

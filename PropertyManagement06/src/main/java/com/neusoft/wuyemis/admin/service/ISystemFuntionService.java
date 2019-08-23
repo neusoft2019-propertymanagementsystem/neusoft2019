@@ -11,7 +11,7 @@ import com.neusoft.wuyemis.admin.model.SystemFunctionModel;
  */
 public interface ISystemFuntionService {
    
-	  //增
+	    //增
 		public void create(SystemFunctionModel systemfuntionModel) throws Exception;
 		
 		public void update(SystemFunctionModel systemfuntionModel) throws Exception;

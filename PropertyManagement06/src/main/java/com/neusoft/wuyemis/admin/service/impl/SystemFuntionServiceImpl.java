@@ -10,8 +10,7 @@ import com.neusoft.wuyemis.admin.dao.ISystemFunctionDao;
 import com.neusoft.wuyemis.admin.model.SystemFunctionModel;
 import com.neusoft.wuyemis.admin.service.ISystemFuntionService;
 
-@Service
-@Transactional
+@Service("ISystemFuntionService")
 public class SystemFuntionServiceImpl implements ISystemFuntionService {
 	
 	@Autowired
